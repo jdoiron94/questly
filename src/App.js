@@ -10,7 +10,7 @@ import './App.css'
 const json = require('./quests.json')
 
 const CORS_ANYWHERE_URL = 'https://cors-anywhere.herokuapp.com/'
-const HISCORE_URL = 'http://services.runescape.com/m=hiscore_oldschool/index_lite.ws?player='
+const HISCORE_URL = 'https://services.runescape.com/m=hiscore_oldschool/index_lite.ws?player='
 
 const SKILLS = [
   'Attack', 'Defence', 'Strength', 'Hitpoints', 'Ranged', 'Prayer', 'Magic', 'Cooking', 'Woodcutting', 'Fletching',
@@ -259,7 +259,7 @@ function App() {
       setSpinnerActive(true)
       saveToStorage()
       encodedUsername = encodeURIComponent(username)
-      const fullUrl = CORS_ANYWHERE_URL + HISCORE_URL + encodedUsername
+      const fullUrl = getBaseURL() + HISCORE_URL + encodedUsername
       fetch(fullUrl)
         .then(res => {
           if (!res.ok || res.status !== 200) {
@@ -277,6 +277,10 @@ function App() {
           setError(true)
         })
     }
+  }
+
+  function getBaseURL() {
+    return process.env.REACT_APP_USE_CORS ? CORS_ANYWHERE_URL : '';
   }
 
   function parseLevels(data) {
