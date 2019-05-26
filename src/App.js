@@ -1,7 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react'
+
 import LoadingOverlay from 'react-loading-overlay'
 import BarLoader from 'react-spinners/BarLoader'
+import Beforeunload from 'react-beforeunload'
 
 import './App.css'
 
@@ -28,15 +30,8 @@ function App() {
   const [spinnerActive, setSpinnerActive] = useState(false)
 
   useEffect(() => {
-    window.addEventListener('beforeunload', saveToStorage)
-
-    return () => {
-      window.removeEventListener('beforeunload', saveToStorage)
-    }
-  }, [])
-
-  useEffect(() => {
     if (levels !== null) {
+      readFromStorage()
       updateQuests()
     }
   }, [levels])
@@ -45,47 +40,49 @@ function App() {
     updateQuests()
   }, [members])
 
-  return <LoadingOverlay classNamePrefix={'spinner-'} active={spinnerActive} spinner={<BarLoader />} text="Loading your levels"
-    styles={{
-      // Override default spinner wrapper styles so it renders
-      wrapper: {},
-      content: {
-        width: '200px',
-        margin: 'auto'
-      }
-    }}>
-    <div className="App">
-      <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
-        <nav className="uk-navbar-container uk-margin" data-uk-navbar>
-          <div className="uk-navbar-left">
-            <a className="uk-navbar-item uk-logo" href="#">Questly</a>
-            <div className="uk-navbar-item">
-              <input className="uk-input uk-form-width-medium" type="text" placeholder="Username" onChange={e => setUsername(e.target.value)} />
+  return <Beforeunload onBeforeunload={saveToStorage}>
+    <LoadingOverlay classNamePrefix={'spinner-'} active={spinnerActive} spinner={<BarLoader />} text="Loading your levels"
+      styles={{
+        // Override default spinner wrapper styles so it renders
+        wrapper: {},
+        content: {
+          width: '200px',
+          margin: 'auto'
+        }
+      }}>
+      <div className="App">
+        <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
+          <nav className="uk-navbar-container uk-margin" data-uk-navbar>
+            <div className="uk-navbar-left">
+              <a className="uk-navbar-item uk-logo" href="#">Questly</a>
+              <div className="uk-navbar-item">
+                <input className="uk-input uk-form-width-medium" type="text" placeholder="Username" onChange={e => setUsername(e.target.value)} />
+              </div>
+              <div className="uk-navbar-item">
+                <button className="uk-button uk-button-primary" onClick={query}>Submit</button>
+              </div>
+              <div className="uk-navbar-item">
+                <label>
+                  <input className="uk-checkbox uk-mr-mini" type="checkbox" onClick={toggleMembers} />
+                  Members
+                  </label>
+              </div>
             </div>
-            <div className="uk-navbar-item">
-              <button className="uk-button uk-button-primary" onClick={query}>Submit</button>
-            </div>
-            <div className="uk-navbar-item">
-              <label>
-                <input className="uk-checkbox uk-mr-mini" type="checkbox" onClick={toggleMembers} />
-                Members
-                </label>
-            </div>
-          </div>
-        </nav>
+          </nav>
+        </div>
+        <table className="uk-table uk-table-divider">
+          <thead>
+            <tr>
+              <th>Quest</th>
+              <th>Prerequisites</th>
+              <th>Level Requirements</th>
+            </tr>
+          </thead>
+          {renderAllQuests()}
+        </table>
       </div>
-      <table className="uk-table uk-table-divider">
-        <thead>
-          <tr>
-            <th>Quest</th>
-            <th>Prerequisites</th>
-            <th>Level Requirements</th>
-          </tr>
-        </thead>
-        {renderAllQuests()}
-      </table>
-    </div>
-  </LoadingOverlay>
+    </LoadingOverlay>
+  </Beforeunload>
 
   function toggleMembers() {
     setMembers(!members)
@@ -261,6 +258,19 @@ function App() {
       levels.push(level)
     }
     setLevels(levels)
+  }
+
+  function readFromStorage() {
+    debugger
+    if (encodedUsername !== null && typeof(Storage) !== 'undefined') {
+      const quests = JSON.parse(localStorage.getItem(`completed_quests_${encodedUsername}`))
+      let completed = []
+      for (let i = 0; i < quests.length; i++) {
+        const quest = json.quests.filter(q => q.name === quests[i])
+        completed = completed.concat(quest)
+      }
+      setCompleted(completed.sort(compareQuests))
+    }
   }
 
   function saveToStorage() {
