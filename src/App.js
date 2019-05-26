@@ -103,7 +103,7 @@ function App() {
       }
     } else {
       for (let req of requirements) {
-        if (completed.find(q => q.name === req)) {
+        if (completed.find(q => q.name.toUpperCase() === req.toUpperCase())) {
           return true
         }
       }
@@ -137,7 +137,7 @@ function App() {
       if (quest.includes('||')) {
         return hasOneOf(quest)
       }
-      if (!completed.find(q => q.name === quest)) {
+      if (!completed.find(q => q.name.toUpperCase() === quest.toUpperCase())) {
         return false
       }
     }
@@ -162,7 +162,7 @@ function App() {
       const completable = []
       const incompletable = []
       for (let quest of json.quests) {
-        if (!completed.find(q => q.name === quest.name)) {
+        if (!completed.find(q => q.name.toUpperCase() === quest.name.toUpperCase())) {
           if (canCompleteQuest(quest)) {
             completable.push(quest)
           } else {
@@ -179,8 +179,8 @@ function App() {
   function renderAllQuests() {
     return (
       <tbody>
-        {renderQuests(completable, 'completable', 'Done', e => markComplete(e, true))}
-        {renderQuests(incompletable, 'incompletable', 'Done', e => markComplete(e, false))}
+        {renderQuests(completable, 'completable', 'Done', e => markComplete(e))}
+        {renderQuests(incompletable, 'incompletable', 'Done', e => markComplete(e))}
         {renderQuests(completed, 'completed', 'Remove', e => markIncomplete(e))}
       </tbody>
     )
@@ -213,15 +213,11 @@ function App() {
     )
   }
 
-  function markComplete(quest, wasCompletable) {
-    if (!completed.find(q => q.name === quest.name)) {
+  function markComplete(quest) {
+    if (!completed.find(q => q.name.toUpperCase() === quest.name.toUpperCase())) {
       completed.push(quest)
       completed.sort(compareQuests)
-      if (wasCompletable) {
-        setCompletable(completable.filter(q => q !== quest).sort(compareQuests))
-      } else {
-        setIncompletable(incompletable.filter(q => q !== quest).sort(compareQuests))
-      }
+      updateQuests()
     }
   }
 
@@ -295,7 +291,7 @@ function App() {
       if (data !== null) {
         let completed = []
         for (let current of data.quests) {
-          const quest = json.quests.filter(q => q.name === current)
+          const quest = json.quests.filter(q => q.name.toUpperCase() === current.toUpperCase())
           completed = completed.concat(quest)
         }
         setMembers(data.members)
