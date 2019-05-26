@@ -63,7 +63,7 @@ function App() {
               </div>
               <div className="uk-navbar-item">
                 <label>
-                  <input className="uk-checkbox uk-mr-mini" type="checkbox" onClick={toggleMembers} />
+                  <input className="uk-checkbox uk-mr-mini" type="checkbox" checked={members} disabled={levels === null} onClick={toggleMembers} />
                   Members
                   </label>
               </div>
