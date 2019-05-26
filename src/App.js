@@ -41,6 +41,16 @@ function App() {
     updateQuests()
   }, [members])
 
+  useEffect(() => {
+    const body = document.getElementById('body')
+    if (spinnerActive) {
+      window.scrollTo(0, 0)
+      body.classList.add('prevent-scroll')
+    } else {
+      body.classList.remove('prevent-scroll')
+    }
+  }, [spinnerActive])
+
   return <Beforeunload onBeforeunload={saveToStorage}>
     <LoadingOverlay classNamePrefix={'spinner-'} active={spinnerActive} spinner={<BarLoader />} text="Loading your levels"
       styles={{
@@ -52,7 +62,7 @@ function App() {
         }
       }}>
       <div className="App">
-        <div id="navSticky" uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
+        <div id="nav-sticky" uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
           <nav className="uk-navbar-container uk-margin" data-uk-navbar>
             <div className="uk-navbar-left">
               <a className="uk-navbar-item uk-logo" href="#">Questly</a>

@@ -54,7 +54,11 @@ button {
   background-color: #f44336;
 }
 
-#navSticky {
+.prevent-scroll {
+  overflow-y: hidden;
+}
+
+#nav-sticky {
   height: 80px;
 }
 
