@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react'
 import Beforeunload from 'react-beforeunload'
 import LoadingOverlay from 'react-loading-overlay'
 import BarLoader from 'react-spinners/BarLoader'
-import ReactModal from 'react-modal'
 
 import './App.css'
 
@@ -257,6 +256,7 @@ function App() {
 
   function query() {
     if (username && username.trim().length !== 0) {
+      saveToStorage()
       encodedUsername = encodeURIComponent(username)
       const fullUrl = CORS_ANYWHERE_URL + HISCORE_URL + encodedUsername
       setSpinnerActive(true)
