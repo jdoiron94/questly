@@ -42,6 +42,12 @@ function App() {
   }, [members])
 
   useEffect(() => {
+    if (error) {
+      setError(false)
+    }
+  }, [username])
+
+  useEffect(() => {
     const body = document.getElementById('body')
     if (spinnerActive) {
       window.scrollTo(0, 0)
