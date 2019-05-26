@@ -263,7 +263,7 @@ function App() {
   function readFromStorage() {
     debugger
     if (encodedUsername !== null && typeof(Storage) !== 'undefined') {
-      const data = JSON.parse(localStorage.getItem(`completed_quests_${encodedUsername}`))
+      const data = JSON.parse(localStorage.getItem(`quest_data_${encodedUsername}`))
       if (data !== null) {
         let completed = []
         for (let current of data.quests) {
@@ -283,7 +283,7 @@ function App() {
         members: members,
         quests: completed.map(q => q.name)
       }
-      localStorage.setItem(`completed_quests_${encodedUsername}`, JSON.stringify(data))
+      localStorage.setItem(`quest_data_${encodedUsername}`, JSON.stringify(data))
     }
   }
 }
