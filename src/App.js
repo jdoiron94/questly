@@ -31,6 +31,10 @@ function App() {
   const [error, setError] = useState(false)
 
   useEffect(() => {
+    readFromStorage()
+  }, [])
+
+  useEffect(() => {
     if (levels !== null) {
       readFromStorage()
       updateQuests()
@@ -39,7 +43,7 @@ function App() {
 
   useEffect(() => {
     updateQuests()
-  }, [members])
+  }, [members, completed])
 
   useEffect(() => {
     if (error) {
@@ -128,7 +132,7 @@ function App() {
   }
 
   function hasSkillRequirements(requirements) {
-    if (requirements === undefined) {
+    if (requirements === undefined || levels === null) {
       return true
     }
     for (let skill of requirements) {
@@ -174,20 +178,20 @@ function App() {
   }
 
   function updateQuests() {
-    if (levels !== null) {
-      const completable = []
-      const incompletable = []
-      for (let quest of json.quests) {
-        if (!completed.find(q => q.name.toUpperCase() === quest.name.toUpperCase())) {
-          if (canCompleteQuest(quest)) {
-            completable.push(quest)
-          } else {
-            incompletable.push(quest)
-          }
+    const completable = []
+    const incompletable = []
+    for (let quest of json.quests) {
+      if (!completed.find(q => q.name.toUpperCase() === quest.name.toUpperCase())) {
+        if (canCompleteQuest(quest)) {
+          completable.push(quest)
+        } else {
+          incompletable.push(quest)
         }
       }
-      setCompletable(completable.sort(compareQuests))
-      setIncompletable(incompletable.sort(compareQuests))
+    }
+    setCompletable(completable.sort(compareQuests))
+    setIncompletable(incompletable.sort(compareQuests))
+    if (spinnerActive) {
       setSpinnerActive(false)
     }
   }
@@ -308,8 +312,9 @@ function App() {
   }
 
   function readFromStorage() {
-    if (encodedUsername !== null && typeof (Storage) !== 'undefined') {
-      const data = JSON.parse(localStorage.getItem(`quest_data_${encodedUsername}`))
+    if (typeof (Storage) !== 'undefined') {
+      const user = (encodedUsername === null ? 'default' : encodedUsername)
+      const data = JSON.parse(localStorage.getItem(`quest_data_${user}`))
       if (data !== null) {
         let completed = []
         for (let current of data.quests) {
@@ -323,12 +328,13 @@ function App() {
   }
 
   function saveToStorage() {
-    if (encodedUsername !== null && typeof (Storage) !== 'undefined') {
+    if (typeof (Storage) !== 'undefined') {
       const data = {
         members: members,
         quests: completed.map(q => q.name)
       }
-      localStorage.setItem(`quest_data_${encodedUsername}`, JSON.stringify(data))
+      const user = (encodedUsername === null ? 'default' : encodedUsername)
+      localStorage.setItem(`quest_data_${user}`, JSON.stringify(data))
     }
   }
 }
