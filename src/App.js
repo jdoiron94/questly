@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react'
 
+import Beforeunload from 'react-beforeunload'
 import LoadingOverlay from 'react-loading-overlay'
 import BarLoader from 'react-spinners/BarLoader'
-import Beforeunload from 'react-beforeunload'
+import ReactModal from 'react-modal'
 
 import './App.css'
 
@@ -28,6 +29,7 @@ function App() {
   const [completable, setCompletable] = useState(json.quests.slice(0))
   const [incompletable, setIncompletable] = useState([])
   const [spinnerActive, setSpinnerActive] = useState(false)
+  const [error, setError] = useState(false)
 
   useEffect(() => {
     if (levels !== null) {
@@ -51,7 +53,7 @@ function App() {
         }
       }}>
       <div className="App">
-        <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
+        <div id="navSticky" uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
           <nav className="uk-navbar-container uk-margin" data-uk-navbar>
             <div className="uk-navbar-left">
               <a className="uk-navbar-item uk-logo" href="#">Questly</a>
@@ -65,13 +67,14 @@ function App() {
                 <label>
                   <input className="uk-checkbox uk-mr-mini" type="checkbox" checked={members} disabled={levels === null} onClick={toggleMembers} />
                   Members
-                  </label>
+                </label>
               </div>
             </div>
           </nav>
         </div>
+        {renderErrorMessage()}
         <table className="uk-table uk-table-divider">
-          <thead>
+          <thead data-uk-scrollspy="cls:uk-animation-slide-top">
             <tr>
               <th>Quest</th>
               <th>Prerequisites</th>
@@ -186,7 +189,7 @@ function App() {
 
   function renderQuests(quests, className, buttonText, buttonCallback) {
     return quests.map((quest, i) => (
-      <tr key={i} className={className}>
+      <tr key={i} className={className} data-uk-scrollspy="cls:uk-animation-fast uk-animation-fade">
         <td>{quest.name}</td>
         <td>{renderPrerequisites(quest.requirements.quests)}</td>
         <td>{renderPrerequisites(quest.requirements.skills)}</td>
@@ -195,11 +198,26 @@ function App() {
     ))
   }
 
+  function renderErrorMessage() {
+    return !error ? null : (
+      <div id="error" data-uk-alert>
+        <div className="uk-alert uk-alert-warning">
+          <a className="uk-alert-close uk-icon uk-close" onClick={() => setError(false)}>
+            <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" data-svg="close-icon">
+              <line fill="none" stroke="#000" strokeWidth="1.1" x1="1" y1="1" x2="13" y2="13"></line>
+              <line fill="none" stroke="#000" strokeWidth="1.1" x1="13" y1="1" x2="1" y2="13"></line>
+            </svg>
+          </a>
+          <p>No player could be found with the username <span className="bold">{username}</span>.</p>
+        </div>
+      </div>
+    )
+  }
+
   function markComplete(quest, wasCompletable) {
     if (!completed.find(q => q.name === quest.name)) {
       completed.push(quest)
       completed.sort(compareQuests)
-      debugger
       if (wasCompletable) {
         setCompletable(completable.filter(q => q !== quest).sort(compareQuests))
       } else {
@@ -238,16 +256,27 @@ function App() {
   }
 
   function query() {
-    encodedUsername = encodeURIComponent(username) 
-    const fullUrl = CORS_ANYWHERE_URL + HISCORE_URL + encodedUsername
-    setSpinnerActive(true)
-    fetch(fullUrl)
-      .then(res => res.text())
-      .then(res => parseLevels(res))
-      .catch(err => {
-        console.error(err)
-        setSpinnerActive(false)
-      })
+    if (username && username.trim().length !== 0) {
+      encodedUsername = encodeURIComponent(username)
+      const fullUrl = CORS_ANYWHERE_URL + HISCORE_URL + encodedUsername
+      setSpinnerActive(true)
+      fetch(fullUrl)
+        .then(res => {
+          if (!res.ok || res.status !== 200) {
+            throw new Error('Player not found')
+          } else {
+            return res.text()
+          }
+        })
+        .then(res => {
+          parseLevels(res)
+        })
+        .catch(err => {
+          console.error(err)
+          setSpinnerActive(false)
+          setError(true)
+        })
+    }
   }
 
   function parseLevels(data) {
@@ -261,8 +290,7 @@ function App() {
   }
 
   function readFromStorage() {
-    debugger
-    if (encodedUsername !== null && typeof(Storage) !== 'undefined') {
+    if (encodedUsername !== null && typeof (Storage) !== 'undefined') {
       const data = JSON.parse(localStorage.getItem(`quest_data_${encodedUsername}`))
       if (data !== null) {
         let completed = []
@@ -277,8 +305,7 @@ function App() {
   }
 
   function saveToStorage() {
-    debugger
-    if (encodedUsername !== null && typeof(Storage) !== 'undefined') {
+    if (encodedUsername !== null && typeof (Storage) !== 'undefined') {
       const data = {
         members: members,
         quests: completed.map(q => q.name)

@@ -6,6 +6,10 @@ button {
   border: 1px solid transparent;
 }
 
+.bold {
+  font-weight: 700;
+}
+
 .uk-mr-mini {
   margin-right: 10px;
 }
@@ -16,6 +20,15 @@ button {
 
 .uk-table {
   margin-bottom: 0;
+}
+
+.spinner-content > div {
+  left: 50px;
+  margin-bottom: 0.25em;
+}
+
+.spinner-content > div > div {
+  background-color: white;
 }
 
 .completable {
@@ -41,11 +54,11 @@ button {
   background-color: #f44336;
 }
 
-.spinner-content > div {
-  left: 50px;
-  margin-bottom: 0.25em;
+#navSticky {
+  height: 80px;
 }
 
-.spinner-content > div > div {
-  background-color: white;
+#error {
+  margin: 0;
+  padding: 0;
 }
