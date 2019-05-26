@@ -932,7 +932,10 @@
     {
       "name": "Rag and Bone Man II",
       "requirements": {
-        "members": true
+        "members": true,
+        "quests": [
+          "Rag and Bone Man"
+        ]
       }
     },
     {
