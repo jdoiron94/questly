@@ -57,7 +57,7 @@ function App() {
             <div className="uk-navbar-left">
               <a className="uk-navbar-item uk-logo" href="#">Questly</a>
               <div className="uk-navbar-item">
-                <input className="uk-input uk-form-width-medium" type="text" placeholder="Username" onChange={e => setUsername(e.target.value)} />
+                <input className="uk-input uk-form-width-medium" type="text" placeholder="Username" onChange={e => setUsername(e.target.value)} onKeyDown={handleKeyDown} />
               </div>
               <div className="uk-navbar-item">
                 <button className="uk-button uk-button-primary" onClick={query}>Submit</button>
@@ -248,6 +248,12 @@ function App() {
 
   function compareQuests(x, y) {
     return x.name.localeCompare(y.name)
+  }
+
+  function handleKeyDown(e) {
+    if (e.key === 'Enter') {
+      query()
+    }
   }
 
   function query() {
