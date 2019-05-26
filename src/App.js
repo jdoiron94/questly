@@ -256,10 +256,10 @@ function App() {
 
   function query() {
     if (username && username.trim().length !== 0) {
+      setSpinnerActive(true)
       saveToStorage()
       encodedUsername = encodeURIComponent(username)
       const fullUrl = CORS_ANYWHERE_URL + HISCORE_URL + encodedUsername
-      setSpinnerActive(true)
       fetch(fullUrl)
         .then(res => {
           if (!res.ok || res.status !== 200) {
