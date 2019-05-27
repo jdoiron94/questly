@@ -28,6 +28,7 @@ function App() {
   const [completed, setCompleted] = useState([])
   const [completable, setCompletable] = useState(json.quests.slice(0))
   const [incompletable, setIncompletable] = useState([])
+  const [questPoints, setQuestPoints] = useState(0)
   const [spinnerActive, setSpinnerActive] = useState(false)
   const [error, setError] = useState(false)
 
@@ -38,8 +39,9 @@ function App() {
 
   // After membership status changes or data is read from local storage, update table
   useEffect(() => {
-    updateQuests(initializing)
-    if (initializing) {
+    if (!initializing) {
+      updateQuests(true)
+    } else {
       setInitializing(false)
     }
   }, [members])
@@ -58,6 +60,11 @@ function App() {
       setError(false)
     }
   }, [username])
+
+  useEffect(() => {
+    setQuestPoints(updateQuestPoints())
+    updateQuests(false)
+  }, [completed])
 
   // After spinner state changes, modify body class to control scroll lock state
   useEffect(() => {
@@ -97,6 +104,7 @@ function App() {
                   Members
                 </label>
               </div>
+              <div className="uk-navbar-item">QP: {questPoints}</div>
             </div>
           </nav>
         </div>
@@ -246,6 +254,7 @@ function App() {
       completed.push(quest)
       completed.sort(compareQuests)
       updateQuests(false)
+      setQuestPoints(updateQuestPoints())
     }
   }
 
@@ -282,6 +291,15 @@ function App() {
     if (e.key === 'Enter') {
       query()
     }
+  }
+
+  function updateQuestPoints() {
+    let points = 0
+    for (let quest of completed) {
+      const current = json.quests.find(q => q.name.toUpperCase() === quest.name.toUpperCase())
+      points += current.quest_points
+    }
+    return points
   }
 
   function query() {
