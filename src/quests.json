@@ -2,12 +2,14 @@
   "quests": [
     {
       "name": "A Soul's Bane",
+      "quest_points": 1,
       "requirements": {
         "members": true
       }
     },
     {
       "name": "A Tail of Two Cats",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "quests": [
@@ -17,6 +19,7 @@
     },
     {
       "name": "A Taste of Hope",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -33,12 +36,14 @@
     },
     {
       "name": "Alfred Grimhand's Barcrawl",
+      "quest_points": 0,
       "requirements": {
         "members": true
       }
     },
     {
       "name": "Animal Magnetism",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -56,6 +61,7 @@
     },
     {
       "name": "Another Slice of H.A.M.",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -72,6 +78,7 @@
     },
     {
       "name": "Between a Rock...",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "quests": [
@@ -87,6 +94,7 @@
     },
     {
       "name": "Big Chompy Bird Hunting",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "skills": [
@@ -98,6 +106,7 @@
     },
     {
       "name": "Biohazard",
+      "quest_points": 3,
       "requirements": {
         "members": true,
         "quests": [
@@ -107,12 +116,14 @@
     },
     {
       "name": "Black Knights' Fortress",
+      "quest_points": 3,
       "requirements": {
         "quest_points": 12
       }
     },
     {
       "name": "Bone Voyage",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -122,6 +133,7 @@
     },
     {
       "name": "Cabin Fever",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "quests": [
@@ -139,18 +151,21 @@
     },
     {
       "name": "Client of Kourend",
+      "quest_points": 1,
       "requirements": {
         "members": true
       }
     },
     {
       "name": "Clock Tower",
+      "quest_points": 1,
       "requirements": {
         "members": true
       }
     },
     {
       "name": "Cold War",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "skills": [
@@ -164,6 +179,7 @@
     },
     {
       "name": "Contact!",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -174,10 +190,12 @@
     },
     {
       "name": "Cook's Assistant",
+      "quest_points": 1,
       "requirements": {}
     },
     {
       "name": "Creature of Fenkenstrain",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "quests": [
@@ -192,6 +210,7 @@
     },
     {
       "name": "Darkness of Hallowvale",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "quests": [
@@ -210,12 +229,14 @@
     },
     {
       "name": "Death Plateau",
+      "quest_points": 1,
       "requirements": {
         "members": true
       }
     },
     {
       "name": "Death to the Dorgeshuun",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -229,10 +250,12 @@
     },
     {
       "name": "Demon Slayer",
+      "quest_points": 3,
       "requirements": {}
     },
     {
       "name": "Desert Treasure",
+      "quest_points": 3,
       "requirements": {
         "members": true,
         "quests": [
@@ -253,6 +276,7 @@
     },
     {
       "name": "Devious Minds",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -270,6 +294,7 @@
     },
     {
       "name": "Doric's Quest",
+      "quest_points": 1,
       "requirements": {
         "skills": [
           "15 Mining"
@@ -278,12 +303,14 @@
     },
     {
       "name": "Dragon Slayer",
+      "quest_points": 2,
       "requirements": {
         "quest_points": 32
       }
     },
     {
       "name": "Dragon Slayer II",
+      "quest_points": 5,
       "requirements": {
         "members": true,
         "quest_points": 200,
@@ -310,6 +337,7 @@
     },
     {
       "name": "Dream Mentor",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "combat_level": 85,
@@ -321,18 +349,21 @@
     },
     {
       "name": "Druidic Ritual",
+      "quest_points": 4,
       "requirements": {
         "members": true
       }
     },
     {
       "name": "Dwarf Cannon",
+      "quest_points": 1,
       "requirements": {
         "members": true
       }
     },
     {
       "name": "Eadgar's Ruse",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -346,6 +377,7 @@
     },
     {
       "name": "Eagles' Peak",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "skills": [
@@ -355,6 +387,7 @@
     },
     {
       "name": "Elemental Workshop I",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "skills": [
@@ -366,6 +399,7 @@
     },
     {
       "name": "Elemental Workshop II",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -379,6 +413,7 @@
     },
     {
       "name": "Enakhra's Lament",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "skills": [
@@ -391,6 +426,7 @@
     },
     {
       "name": "Enlightened Journey",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quest_points": 20,
@@ -403,6 +439,7 @@
     },
     {
       "name": "Enter the Abyss",
+      "quest_points": 0,
       "requirements": {
         "members": true,
         "quests": [
@@ -412,10 +449,12 @@
     },
     {
       "name": "Ernest the Chicken",
+      "quest_points": 4,
       "requirements": {}
     },
     {
       "name": "Fairytale I - Growing Pains",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "quests": [
@@ -427,6 +466,7 @@
     },
     {
       "name": "Fairytale II - Cure a Queen",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "quests": [
@@ -441,6 +481,7 @@
     },
     {
       "name": "Family Crest",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "skills": [
@@ -453,12 +494,14 @@
     },
     {
       "name": "Fight Arena",
+      "quest_points": 2,
       "requirements": {
         "members": true
       }
     },
     {
       "name": "Fishing Contest",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "skills": [
@@ -468,6 +511,7 @@
     },
     {
       "name": "Forgettable Tale of a Drunken Dwarf",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "quests": [
@@ -482,6 +526,7 @@
     },
     {
       "name": "Garden of Tranquillity",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "quests": [
@@ -494,12 +539,14 @@
     },
     {
       "name": "Gertrude's Cat",
+      "quest_points": 1,
       "requirements": {
         "members": true
       }
     },
     {
       "name": "Ghosts Ahoy",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "quests": [
@@ -514,10 +561,12 @@
     },
     {
       "name": "Goblin Diplomacy",
+      "quest_points": 5,
       "requirements": {}
     },
     {
       "name": "Grim Tales",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -534,6 +583,7 @@
     },
     {
       "name": "Haunted Mine",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "quests": [
@@ -547,12 +597,14 @@
     },
     {
       "name": "Hazeel Cult",
+      "quest_points": 1,
       "requirements": {
         "members": true
       }
     },
     {
       "name": "Heroes' Quest",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quest_points": 55,
@@ -573,6 +625,7 @@
     },
     {
       "name": "Holy Grail",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "quests": [
@@ -585,6 +638,7 @@
     },
     {
       "name": "Horror from the Deep",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "quests": [
@@ -597,6 +651,7 @@
     },
     {
       "name": "Icthlarin's Little Helper",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "quests": [
@@ -606,10 +661,12 @@
     },
     {
       "name": "Imp Catcher",
+      "quest_points": 1,
       "requirements": {}
     },
     {
       "name": "In Aid of the Myreque",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "quests": [
@@ -624,6 +681,7 @@
     },
     {
       "name": "In Search of the Myreque",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "quests": [
@@ -636,6 +694,7 @@
     },
     {
       "name": "Jungle Potion",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -648,6 +707,7 @@
     },
     {
       "name": "King's Ransom",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -664,6 +724,7 @@
     },
     {
       "name": "Legends' Quest",
+      "quest_points": 4,
       "requirements": {
         "members": true,
         "quest_points": 107,
@@ -690,6 +751,7 @@
     },
     {
       "name": "Lost City",
+      "quest_points": 3,
       "requirements": {
         "members": true,
         "skills": [
@@ -700,6 +762,7 @@
     },
     {
       "name": "Lunar Diplomacy",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "quests": [
@@ -721,6 +784,7 @@
     },
     {
       "name": "Making Friends with My Arm",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "quests": [
@@ -739,6 +803,7 @@
     },
     {
       "name": "Making History",
+      "quest_points": 3,
       "requirements": {
         "members": true,
         "quests": [
@@ -749,22 +814,26 @@
     },
     {
       "name": "Merlin's Crystal",
+      "quest_points": 6,
       "requirements": {
         "members": true
       }
     },
     {
       "name": "Misthalin Mystery",
+      "quest_points": 1,
       "requirements": {}
     },
     {
       "name": "Monk's Friend",
+      "quest_points": 1,
       "requirements": {
         "members": true
       }
     },
     {
       "name": "Monkey Madness I",
+      "quest_points": 3,
       "requirements": {
         "members": true,
         "quests": [
@@ -775,6 +844,7 @@
     },
     {
       "name": "Monkey Madness II",
+      "quest_points": 4,
       "requirements": {
         "members": true,
         "quests": [
@@ -795,6 +865,7 @@
     },
     {
       "name": "Mountain Daughter",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "skills": [
@@ -804,6 +875,7 @@
     },
     {
       "name": "Mourning's Ends Part I",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "quests": [
@@ -819,6 +891,7 @@
     },
     {
       "name": "Mourning's Ends Part II",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "quests": [
@@ -828,12 +901,14 @@
     },
     {
       "name": "Murder Mystery",
+      "quest_points": 3,
       "requirements": {
         "members": true
       }
     },
     {
       "name": "My Arm's Big Adventure",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -849,6 +924,7 @@
     },
     {
       "name": "Nature Spirit",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "quests": [
@@ -859,6 +935,7 @@
     },
     {
       "name": "Observatory Quest",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "skills": [
@@ -868,6 +945,7 @@
     },
     {
       "name": "Olaf's Quest",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -881,6 +959,7 @@
     },
     {
       "name": "One Small Favour",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "quests": [
@@ -897,26 +976,31 @@
     },
     {
       "name": "Pirate's Treasure",
+      "quest_points": 2,
       "requirements": {}
     },
     {
       "name": "Plague City",
+      "quest_points": 1,
       "requirements": {
         "members": true
       }
     },
     {
       "name": "Priest in Peril",
+      "quest_points": 1,
       "requirements": {
         "members": true
       }
     },
     {
       "name": "Prince Ali Rescue",
+      "quest_points": 3,
       "requirements": {}
     },
     {
       "name": "Rag and Bone Man",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -931,6 +1015,7 @@
     },
     {
       "name": "Rag and Bone Man II",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -940,6 +1025,7 @@
     },
     {
       "name": "Ratcatchers",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "quests": [
@@ -949,6 +1035,7 @@
     },
     {
       "name": "Recipe for Disaster",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quest_points": 175,
@@ -969,6 +1056,7 @@
     },
     {
       "name": "Recipe for Disaster: Evil Dave",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -983,6 +1071,7 @@
     },
     {
       "name": "Recipe for Disaster: Goblin generals",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -993,6 +1082,7 @@
     },
     {
       "name": "Recipe for Disaster: King Awowogei",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -1007,6 +1097,7 @@
     },
     {
       "name": "Recipe for Disaster: Lumbridge Guide",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -1025,6 +1116,7 @@
     },
     {
       "name": "Recipe for Disaster: Mountain Dwarf",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -1038,6 +1130,7 @@
     },
     {
       "name": "Recipe for Disaster: Pirate Pete",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -1050,6 +1143,7 @@
     },
     {
       "name": "Recipe for Disaster: Sir Amik Varze",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quest_points": 107,
@@ -1068,6 +1162,7 @@
     },
     {
       "name": "Recipe for Disaster: Skrach Uglogwee",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -1082,9 +1177,9 @@
     },
     {
       "name": "Recruitment Drive",
+      "quest_points": 1,
       "requirements": {
         "members": true,
-        "quest_points": 12,
         "quests": [
           "Black Knights' Fortress",
           "Druidic Ritual"
@@ -1093,6 +1188,7 @@
     },
     {
       "name": "Regicide",
+      "quest_points": 3,
       "requirements": {
         "members": true,
         "quests": [
@@ -1106,10 +1202,12 @@
     },
     {
       "name": "Romeo & Juliet",
+      "quest_points": 5,
       "requirements": {}
     },
     {
       "name": "Roving Elves",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -1123,6 +1221,7 @@
     },
     {
       "name": "Royal Trouble",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -1136,6 +1235,7 @@
     },
     {
       "name": "Rum Deal",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "quests": [
@@ -1153,10 +1253,12 @@
     },
     {
       "name": "Rune Mysteries",
+      "quest_points": 1,
       "requirements": {}
     },
     {
       "name": "Scorpion Catcher",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -1169,6 +1271,7 @@
     },
     {
       "name": "Sea Slug",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "skills": [
@@ -1178,6 +1281,7 @@
     },
     {
       "name": "Shades of Mort'ton",
+      "quest_points": 3,
       "requirements": {
         "members": true,
         "quests": [
@@ -1192,6 +1296,7 @@
     },
     {
       "name": "Shadow of the Storm",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -1205,20 +1310,24 @@
     },
     {
       "name": "Sheep Herder",
+      "quest_points": 4,
       "requirements": {
         "members": true
       }
     },
     {
       "name": "Sheep Shearer",
+      "quest_points": 1,
       "requirements": {}
     },
     {
       "name": "Shield of Arrav",
+      "quest_points": 1,
       "requirements": {}
     },
     {
       "name": "Shilo Village",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "quests": [
@@ -1232,6 +1341,7 @@
     },
     {
       "name": "Skippy and the Mogres",
+      "quest_points": 0,
       "requirements": {
         "members": true,
         "skills": [
@@ -1241,6 +1351,7 @@
     },
     {
       "name": "Spirits of the Elid",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "skills": [
@@ -1253,6 +1364,7 @@
     },
     {
       "name": "Swan Song",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "quest_points": 100,
@@ -1272,6 +1384,7 @@
     },
     {
       "name": "Tai Bwo Wannai Trio",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "quests": [
@@ -1286,6 +1399,7 @@
     },
     {
       "name": "Tale of the Righteous",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -1299,6 +1413,7 @@
     },
     {
       "name": "Tears of Guthix",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quest_points": 43,
@@ -1311,6 +1426,7 @@
     },
     {
       "name": "Temple of Ikov",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "skills": [
@@ -1321,6 +1437,7 @@
     },
     {
       "name": "The Ascent of Arceuus",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -1333,10 +1450,12 @@
     },
     {
       "name": "The Corsair Curse",
+      "quest_points": 2,
       "requirements": {}
     },
     {
       "name": "The Depths of Despair",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -1349,6 +1468,7 @@
     },
     {
       "name": "The Dig Site",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "quests": [
@@ -1363,6 +1483,7 @@
     },
     {
       "name": "The Eyes of Glouphrie",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "quests": [
@@ -1376,6 +1497,7 @@
     },
     {
       "name": "The Forsaken Tower",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -1385,6 +1507,7 @@
     },
     {
       "name": "The Feud",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "skills": [
@@ -1394,6 +1517,7 @@
     },
     {
       "name": "The Fremennik Isles",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -1407,12 +1531,14 @@
     },
     {
       "name": "The Fremennik Trials",
+      "quest_points": 3,
       "requirements": {
         "members": true
       }
     },
     {
       "name": "The Giant Dwarf",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "skills": [
@@ -1425,6 +1551,7 @@
     },
     {
       "name": "The Golem",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "skills": [
@@ -1435,6 +1562,7 @@
     },
     {
       "name": "The Grand Tree",
+      "quest_points": 5,
       "requirements": {
         "members": true,
         "skills": [
@@ -1444,6 +1572,7 @@
     },
     {
       "name": "The Great Brain Robbery",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "quests": [
@@ -1460,6 +1589,7 @@
     },
     {
       "name": "The Hand in the Sand",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "skills": [
@@ -1470,6 +1600,7 @@
     },
     {
       "name": "The Knight's Sword",
+      "quest_points": 1,
       "requirements": {
         "skills": [
           "10 Mining"
@@ -1478,6 +1609,7 @@
     },
     {
       "name": "The Lost Tribe",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -1493,10 +1625,12 @@
     },
     {
       "name": "The Restless Ghost",
+      "quest_points": 1,
       "requirements": {}
     },
     {
       "name": "The Slug Menace",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -1513,6 +1647,7 @@
     },
     {
       "name": "The Tourist Trap",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "skills": [
@@ -1523,6 +1658,7 @@
     },
     {
       "name": "The Queen of Thieves",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -1535,6 +1671,7 @@
     },
     {
       "name": "Throne of Miscellania",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -1548,6 +1685,7 @@
     },
     {
       "name": "Tower of Life",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "skills": [
@@ -1557,12 +1695,14 @@
     },
     {
       "name": "Tree Gnome Village",
+      "quest_points": 2,
       "requirements": {
         "members": true
       }
     },
     {
       "name": "Tribal Totem",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "skills": [
@@ -1572,6 +1712,7 @@
     },
     {
       "name": "Troll Romance",
+      "quest_points": 2,
       "requirements": {
         "members": true,
         "quests": [
@@ -1584,6 +1725,7 @@
     },
     {
       "name": "Troll Stronghold",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -1596,6 +1738,7 @@
     },
     {
       "name": "Underground Pass",
+      "quest_points": 5,
       "requirements": {
         "members": true,
         "quests": [
@@ -1608,10 +1751,12 @@
     },
     {
       "name": "Vampire Slayer",
+      "quest_points": 3,
       "requirements": {}
     },
     {
       "name": "Wanted!",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quest_points": 32,
@@ -1624,6 +1769,7 @@
     },
     {
       "name": "Watchtower",
+      "quest_points": 4,
       "requirements": {
         "members": true,
         "quests": [
@@ -1640,12 +1786,14 @@
     },
     {
       "name": "Waterfall Quest",
+      "quest_points": 1,
       "requirements": {
         "members": true
       }
     },
     {
       "name": "What Lies Below",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [
@@ -1659,20 +1807,24 @@
     },
     {
       "name": "Witch's House",
+      "quest_points": 4,
       "requirements": {
         "members": true
       }
     },
     {
       "name": "Witch's Potion",
+      "quest_points": 1,
       "requirements": {}
     },
     {
       "name": "X Marks the Spot",
+      "quest_points": 1,
       "requirements": {}
     },
     {
       "name": "Zogre Flesh Eaters",
+      "quest_points": 1,
       "requirements": {
         "members": true,
         "quests": [

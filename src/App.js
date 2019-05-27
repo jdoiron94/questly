@@ -36,14 +36,6 @@ function App() {
     readFromStorage()
   }, [])
 
-  // After levels change, attempt to read stats for user and update table
-  useEffect(() => {
-    if (levels !== null) {
-      readFromStorage()
-      updateQuests(true)
-    }
-  }, [levels])
-
   // After membership status changes or data is read from local storage, update table
   useEffect(() => {
     updateQuests(initializing)
@@ -51,6 +43,14 @@ function App() {
       setInitializing(false)
     }
   }, [members])
+
+  // After levels change, attempt to read stats for user and update table
+  useEffect(() => {
+    if (levels !== null) {
+      readFromStorage()
+      updateQuests(true)
+    }
+  }, [levels])
 
   // After username changes, remove error message if visible
   useEffect(() => {
