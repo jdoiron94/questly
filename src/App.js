@@ -21,6 +21,7 @@ const SKILLS = [
 let encodedUsername = null
 
 function App() {
+  const [initializing, setInitializing] = useState(true)
   const [username, setUsername] = useState(null)
   const [members, setMembers] = useState(true)
   const [levels, setLevels] = useState(null)
@@ -30,27 +31,35 @@ function App() {
   const [spinnerActive, setSpinnerActive] = useState(false)
   const [error, setError] = useState(false)
 
+  // After app has mounted, attempt to read stats from local storage
   useEffect(() => {
     readFromStorage()
   }, [])
 
+  // After levels change, attempt to read stats for user and update table
   useEffect(() => {
     if (levels !== null) {
       readFromStorage()
-      updateQuests()
+      updateQuests(true)
     }
   }, [levels])
 
+  // After membership status changes or data is read from local storage, update table
   useEffect(() => {
-    updateQuests()
-  }, [members, completed])
+    updateQuests(initializing)
+    if (initializing) {
+      setInitializing(false)
+    }
+  }, [members])
 
+  // After username changes, remove error message if visible
   useEffect(() => {
     if (error) {
       setError(false)
     }
   }, [username])
 
+  // After spinner state changes, modify body class to control scroll lock state
   useEffect(() => {
     const body = document.getElementById('body')
     if (spinnerActive) {
@@ -168,21 +177,20 @@ function App() {
     return requirement === undefined || requirement === members
   }
 
-  function canCompleteQuest(quest) {
+  function canCompleteQuest(quest, checkSkills) {
     if (hasQuestEligibility(quest.requirements.members)) {
-      const hasSkills = hasSkillRequirements(quest.requirements.skills)
       const hasQuests = hasQuestRequirements(quest.requirements.quests)
-      return hasSkills && hasQuests
+      return hasQuests && (!checkSkills || hasSkillRequirements(quest.requirements.skills))
     }
     return false
   }
 
-  function updateQuests() {
+  function updateQuests(checkSkills) {
     const completable = []
     const incompletable = []
     for (let quest of json.quests) {
       if (!completed.find(q => q.name.toUpperCase() === quest.name.toUpperCase())) {
-        if (canCompleteQuest(quest)) {
+        if (canCompleteQuest(quest, checkSkills)) {
           completable.push(quest)
         } else {
           incompletable.push(quest)
@@ -237,7 +245,7 @@ function App() {
     if (!completed.find(q => q.name.toUpperCase() === quest.name.toUpperCase())) {
       completed.push(quest)
       completed.sort(compareQuests)
-      updateQuests()
+      updateQuests(false)
     }
   }
 
@@ -323,6 +331,9 @@ function App() {
         }
         setMembers(data.members)
         setCompleted(completed.sort(compareQuests))
+      } else {
+        setMembers(true)
+        setCompleted([])
       }
     }
   }
