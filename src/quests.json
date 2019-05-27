@@ -1043,6 +1043,7 @@
           "Cook's Assistant",
           "Desert Treasure",
           "Horror from the Deep",
+          "Recipe for Disaster: Another Cook's Quest",
           "Recipe for Disaster: Evil Dave",
           "Recipe for Disaster: Goblin generals",
           "Recipe for Disaster: King Awowogei",
@@ -1051,6 +1052,19 @@
           "Recipe for Disaster: Pirate Pete",
           "Recipe for Disaster: Sir Amik Varze",
           "Recipe for Disaster: Skrach Uglogwee"
+        ]
+      }
+    },
+    {
+      "name": "Recipe for Disaster: Another Cook's Quest",
+      "quest_points": 1,
+      "requirements": {
+        "members": true,
+        "quests": [
+          "Cook's Assistant"
+        ],
+        "skills": [
+          "10 Cooking"
         ]
       }
     },
