@@ -84,7 +84,7 @@ function App() {
         <div id="nav-sticky" uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
           <nav className="uk-navbar-container uk-margin" data-uk-navbar>
             <div className="uk-navbar-left">
-              <a className="uk-navbar-item uk-logo" href="#">Questly</a>
+              <div className="uk-navbar-item uk-logo">Questly</div>
               <div className="uk-navbar-item">
                 <input className="uk-input uk-form-width-medium" type="text" placeholder="Username" onChange={e => setUsername(e.target.value)} onKeyDown={handleKeyDown} />
               </div>
@@ -229,12 +229,12 @@ function App() {
     return !error ? null : (
       <div id="error" data-uk-alert>
         <div className="uk-alert uk-alert-warning">
-          <a className="uk-alert-close uk-icon uk-close" onClick={() => setError(false)}>
+          <button className="uk-alert-close uk-icon uk-close link-button" onClick={() => setError(false)}>
             <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" data-svg="close-icon">
               <line fill="none" stroke="#000" strokeWidth="1.1" x1="1" y1="1" x2="13" y2="13"></line>
               <line fill="none" stroke="#000" strokeWidth="1.1" x1="13" y1="1" x2="1" y2="13"></line>
             </svg>
-          </a>
+          </button>
           <p>No player could be found with the username <span className="bold">{username}</span>.</p>
         </div>
       </div>
