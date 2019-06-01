@@ -63,7 +63,7 @@ function App() {
 
   // After a quest is removed, update completed quest points
   useEffect(() => {
-    setQuestPoints(updateQuestPoints())
+    updateQuestPoints()
   }, [completed])
 
   // After quest point value changes, update quest table
@@ -101,7 +101,7 @@ function App() {
                 <input className="uk-input uk-form-width-medium" type="text" placeholder="Username" onChange={e => setUsername(e.target.value)} onKeyDown={handleKeyDown} />
               </div>
               <div className="uk-navbar-item">
-                <button className="uk-button uk-button-primary" onClick={query}>Submit</button>
+                <button className="uk-button uk-button-primary" onClick={fetchLevels}>Submit</button>
               </div>
               <div className="uk-navbar-item">
                 <label>
@@ -129,8 +129,59 @@ function App() {
     </LoadingOverlay>
   </Beforeunload>
 
-  function toggleMembers() {
-    setMembers(!members)
+function renderErrorMessage() {
+  return !error ? null : (
+    <div id="error" data-uk-alert>
+      <div className="uk-alert uk-alert-warning">
+        <button className="uk-alert-close uk-icon uk-close link-button" onClick={() => setError(false)}>
+          <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" data-svg="close-icon">
+            <line fill="none" stroke="#000" strokeWidth="1.1" x1="1" y1="1" x2="13" y2="13"></line>
+            <line fill="none" stroke="#000" strokeWidth="1.1" x1="13" y1="1" x2="1" y2="13"></line>
+          </svg>
+        </button>
+        <p>No player could be found with the username <span className="bold">{username}</span>.</p>
+      </div>
+    </div>
+  )
+}
+
+  function renderAllQuests() {
+    return (
+      <tbody>
+        {renderQuests(completable, 'completable', 'Done', e => addToCompleted(e))}
+        {renderQuests(incompletable, 'incompletable', 'Done', e => addToCompleted(e))}
+        {renderQuests(completed, 'completed', 'Remove', e => removeFromCompleted(e))}
+      </tbody>
+    )
+  }
+
+  function renderQuests(quests, className, buttonText, buttonCallback) {
+    return quests.map((quest, i) => (
+      <tr key={i} className={className} data-uk-scrollspy="cls:uk-animation-fast uk-animation-fade">
+        <td>{quest.name}</td>
+        <td>{renderPrerequisites(quest.requirements.quests, quest.requirements.quest_points)}</td>
+        <td>{renderPrerequisites(quest.requirements.skills, null)}</td>
+        <td>{quest.quest_points}</td>
+        <td><button className="uk-button" onClick={() => buttonCallback(quest)}>{buttonText}</button></td>
+      </tr>
+    ))
+  }
+
+  function renderPrerequisites(reqs, questPointReq) {
+    const localReqs = reqs ? reqs.slice(0) : []
+    if (questPointReq) {
+      localReqs.unshift(`${questPointReq} QP`)
+    }
+    return localReqs.length === 0 ? null : (
+      <ul className="uk-list">
+        {localReqs.map((req, i) => {
+          if (req.toString().includes('||')) {
+            req = req.split('||').join('or')
+          }
+          return (<li key={i}>{req}</li>)
+        })}
+      </ul>
+    )
   }
 
   function hasOneOf(requirement, isSkill) {
@@ -223,53 +274,28 @@ function App() {
     }
   }
 
-  function renderAllQuests() {
-    return (
-      <tbody>
-        {renderQuests(completable, 'completable', 'Done', e => markComplete(e))}
-        {renderQuests(incompletable, 'incompletable', 'Done', e => markComplete(e))}
-        {renderQuests(completed, 'completed', 'Remove', e => markIncomplete(e))}
-      </tbody>
-    )
-  }
-
-  function renderQuests(quests, className, buttonText, buttonCallback) {
-    return quests.map((quest, i) => (
-      <tr key={i} className={className} data-uk-scrollspy="cls:uk-animation-fast uk-animation-fade">
-        <td>{quest.name}</td>
-        <td>{renderPrerequisites(quest.requirements.quests, quest.requirements.quest_points)}</td>
-        <td>{renderPrerequisites(quest.requirements.skills, null)}</td>
-        <td>{quest.quest_points}</td>
-        <td><button className="uk-button" onClick={() => buttonCallback(quest)}>{buttonText}</button></td>
-      </tr>
-    ))
-  }
-
-  function renderErrorMessage() {
-    return !error ? null : (
-      <div id="error" data-uk-alert>
-        <div className="uk-alert uk-alert-warning">
-          <button className="uk-alert-close uk-icon uk-close link-button" onClick={() => setError(false)}>
-            <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" data-svg="close-icon">
-              <line fill="none" stroke="#000" strokeWidth="1.1" x1="1" y1="1" x2="13" y2="13"></line>
-              <line fill="none" stroke="#000" strokeWidth="1.1" x1="13" y1="1" x2="1" y2="13"></line>
-            </svg>
-          </button>
-          <p>No player could be found with the username <span className="bold">{username}</span>.</p>
-        </div>
-      </div>
-    )
-  }
-
-  function markComplete(quest) {
-    if (!completed.find(q => q.name.toUpperCase() === quest.name.toUpperCase())) {
-      completed.push(quest)
-      completed.sort(compareQuests)
-      setQuestPoints(updateQuestPoints())
+  function addAllToCompleted(quest) {
+    if (quest.requirements.quests) {
+      for (let q of quest.requirements.quests) {
+        const req = json.quests.find(j => j.name === q)
+        if (!completed.find(q => q.name.toUpperCase() === req.name.toUpperCase())) {
+          completed.push(req)
+        }
+        addAllToCompleted(req)
+      }
     }
   }
 
-  function markIncomplete(quest) {
+  function addToCompleted(quest) {
+    if (!completed.find(q => q.name.toUpperCase() === quest.name.toUpperCase())) {
+      addAllToCompleted(quest)
+      completed.push(quest)
+      completed.sort(compareQuests)
+      updateQuestPoints()
+    }
+  }
+
+  function removeFromCompleted(quest) {
     if (levels === null || canCompleteQuest(quest)) {
       completable.push(quest)
       completable.sort(compareQuests)
@@ -280,31 +306,12 @@ function App() {
     setCompleted(completed.filter(q => q !== quest).sort(compareQuests))
   }
 
-  function renderPrerequisites(reqs, questPointReq) {
-    const localReqs = reqs ? reqs.slice(0) : []
-    if (questPointReq) {
-      localReqs.unshift(`${questPointReq} QP`)
-    }
-    return localReqs.length === 0 ? null : (
-      <ul className="uk-list">
-        {localReqs.map((req, i) => {
-          if (req.toString().includes('||')) {
-            req = req.split('||').join('or')
-          }
-          return (<li key={i}>{req}</li>)
-        })}
-      </ul>
-    )
-  }
-
   function compareQuests(x, y) {
     return x.name.localeCompare(y.name)
   }
 
-  function handleKeyDown(e) {
-    if (e.key === 'Enter') {
-      query()
-    }
+  function toggleMembers() {
+    setMembers(!members)
   }
 
   function updateQuestPoints() {
@@ -313,10 +320,16 @@ function App() {
       const current = json.quests.find(q => q.name.toUpperCase() === quest.name.toUpperCase())
       points += current.quest_points
     }
-    return points
+    setQuestPoints(points)
   }
 
-  function query() {
+  function handleKeyDown(e) {
+    if (e.key === 'Enter') {
+      fetchLevels()
+    }
+  }
+
+  function fetchLevels() {
     if (username && username.trim().length !== 0) {
       setSpinnerActive(true)
       saveToStorage()
