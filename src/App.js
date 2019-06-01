@@ -98,7 +98,7 @@ function App() {
             <div className="uk-navbar-left">
               <div className="uk-navbar-item uk-logo">Questly</div>
               <div className="uk-navbar-item">
-                <input className="uk-input uk-form-width-medium" type="text" placeholder="Username" onChange={e => setUsername(e.target.value)} onKeyDown={handleKeyDown} />
+                <input className="uk-input uk-form-width-medium" type="text" placeholder="Username" onChange={e => setUsername(e.target.value)} onKeyDown={handleKeyDown} maxlength="12"/>
               </div>
               <div className="uk-navbar-item">
                 <button className="uk-button uk-button-primary" onClick={fetchLevels}>Submit</button>
