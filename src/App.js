@@ -61,10 +61,15 @@ function App() {
     }
   }, [username])
 
+  // After a quest is removed, update completed quest points
   useEffect(() => {
     setQuestPoints(updateQuestPoints())
-    updateQuests(false)
   }, [completed])
+
+  // After quest point value changes, update quest table
+  useEffect(() => {
+    updateQuests(false)
+  }, [questPoints])
 
   // After spinner state changes, modify body class to control scroll lock state
   useEffect(() => {
@@ -115,6 +120,7 @@ function App() {
               <th>Quest</th>
               <th>Prerequisites</th>
               <th>Level Requirements</th>
+              <th>Quest Points</th>
             </tr>
           </thead>
           {renderAllQuests()}
@@ -166,7 +172,11 @@ function App() {
     return true
   }
 
-  function hasQuestRequirements(requirements) {
+  function hasQuestPointRequirement(requirement) {
+    return requirement === undefined || questPoints >= requirement
+  }
+
+  function hasPrerequisites(requirements) {
     if (requirements === undefined) {
       return true
     }
@@ -187,8 +197,9 @@ function App() {
 
   function canCompleteQuest(quest, checkSkills) {
     if (hasQuestEligibility(quest.requirements.members)) {
-      const hasQuests = hasQuestRequirements(quest.requirements.quests)
-      return hasQuests && (!checkSkills || hasSkillRequirements(quest.requirements.skills))
+      const hasQuests = hasPrerequisites(quest.requirements.quests)
+      const hasQuestPoints = hasQuestPointRequirement(quest.requirements.quest_points)
+      return hasQuests && hasQuestPoints && (!checkSkills || hasSkillRequirements(quest.requirements.skills))
     }
     return false
   }
@@ -226,8 +237,9 @@ function App() {
     return quests.map((quest, i) => (
       <tr key={i} className={className} data-uk-scrollspy="cls:uk-animation-fast uk-animation-fade">
         <td>{quest.name}</td>
-        <td>{renderPrerequisites(quest.requirements.quests)}</td>
-        <td>{renderPrerequisites(quest.requirements.skills)}</td>
+        <td>{renderPrerequisites(quest.requirements.quests, quest.requirements.quest_points)}</td>
+        <td>{renderPrerequisites(quest.requirements.skills, null)}</td>
+        <td>{quest.quest_points}</td>
         <td><button className="uk-button" onClick={() => buttonCallback(quest)}>{buttonText}</button></td>
       </tr>
     ))
@@ -253,7 +265,6 @@ function App() {
     if (!completed.find(q => q.name.toUpperCase() === quest.name.toUpperCase())) {
       completed.push(quest)
       completed.sort(compareQuests)
-      updateQuests(false)
       setQuestPoints(updateQuestPoints())
     }
   }
@@ -269,12 +280,15 @@ function App() {
     setCompleted(completed.filter(q => q !== quest).sort(compareQuests))
   }
 
-  function renderPrerequisites(reqs) {
-    reqs = reqs || []
-    return reqs.length === 0 ? null : (
+  function renderPrerequisites(reqs, questPointReq) {
+    const localReqs = reqs ? reqs.slice(0) : []
+    if (questPointReq) {
+      localReqs.unshift(`${questPointReq} QP`)
+    }
+    return localReqs.length === 0 ? null : (
       <ul className="uk-list">
-        {reqs.map((req, i) => {
-          if (req.includes('||')) {
+        {localReqs.map((req, i) => {
+          if (req.toString().includes('||')) {
             req = req.split('||').join('or')
           }
           return (<li key={i}>{req}</li>)
