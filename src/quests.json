@@ -680,6 +680,13 @@
       }
     },
     {
+      "name": "In Search of Knowledge",
+      "quest_points": 0,
+      "requirements": {
+        "members": true
+      }
+    },
+    {
       "name": "In Search of the Myreque",
       "quest_points": 2,
       "requirements": {
@@ -1364,6 +1371,27 @@
       }
     },
     {
+      "name": "Song of the Elves",
+      "quest_points": 4,
+      "requirements": {
+        "members": true,
+        "quests": [
+          "Making History",
+          "Mourning's End Part II"
+        ],
+        "skills": [
+          "70 Agility",
+          "70 Construction",
+          "70 Farming",
+          "70 Herblore",
+          "70 Hunter",
+          "70 Mining",
+          "70 Smithing",
+          "70 Woodcutting"
+        ]
+      }
+    },
+    {
       "name": "Spirits of the Elid",
       "quest_points": 2,
       "requirements": {
@@ -1526,6 +1554,26 @@
         "members": true,
         "skills": [
           "30 Thieving"
+        ]
+      }
+    },
+    {
+      "name": "The Fremennik Exiles",
+      "quest_points": 2,
+      "requirements": {
+        "members": true,
+        "quests": [
+          "The Fremennik Isles",
+          "Lunar Diplomacy",
+          "Mountain Daughter",
+          "Heroes' Quest"
+        ],
+        "skills": [
+          "65 Crafting",
+          "60 Slayer",
+          "60 Smithing",
+          "60 Fishing",
+          "55 Runecraft"
         ]
       }
     },
