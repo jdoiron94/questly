@@ -881,7 +881,7 @@
       }
     },
     {
-      "name": "Mourning's Ends Part I",
+      "name": "Mourning's End Part I",
       "quest_points": 2,
       "requirements": {
         "members": true,
@@ -897,12 +897,12 @@
       }
     },
     {
-      "name": "Mourning's Ends Part II",
+      "name": "Mourning's End Part II",
       "quest_points": 2,
       "requirements": {
         "members": true,
         "quests": [
-          "Mourning's Ends Part I"
+          "Mourning's End Part I"
         ]
       }
     },
