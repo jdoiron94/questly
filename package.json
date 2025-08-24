@@ -1,6 +1,6 @@
 {
-  "name": "vue-questly",
-  "version": "0.0.0",
+  "name": "questly",
+  "version": "1.2.0",
   "private": true,
   "type": "module",
   "engines": {
