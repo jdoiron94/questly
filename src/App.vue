@@ -331,17 +331,20 @@ const parseLevels = (data: SkillResult[]) => {
 </script>
 
 <template>
-  <main>
-    <div
-      id="nav-sticky"
-      uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar"
-    >
-      <nav class="uk-navbar-container uk-margin" data-uk-navbar>
-        <div class="uk-navbar-left">
-          <div class="uk-navbar-item uk-logo">Questly</div>
-          <div class="uk-navbar-item">
+  <main class="block">
+    <div id="nav-sticky" class="fixed top-0 z-980 m-0 box-border h-20 w-full backface-hidden">
+      <nav class="relative mb-5 flex bg-[#f8f8f8]">
+        <div class="flex flex-wrap items-center">
+          <div
+            class="box-border flex min-h-20 items-center justify-center px-[15px] py-0 text-2xl text-[#666] decoration-0"
+          >
+            Questly
+          </div>
+          <div
+            class="box-border flex min-h-20 items-center justify-center px-[15px] py-0 text-sm text-[#666] decoration-0"
+          >
             <input
-              class="uk-input uk-form-width-medium"
+              class="m-0 box-border inline-block h-10 w-50 max-w-full overflow-visible rounded-none border border-[#e5e5e5] bg-[#fff] px-[10px] py-0 text-[#666]"
               type="text"
               placeholder="Username"
               v-model="username"
@@ -349,13 +352,22 @@ const parseLevels = (data: SkillResult[]) => {
               maxlength="12"
             />
           </div>
-          <div class="uk-navbar-item">
-            <button class="uk-button uk-button-primary" @click="fetchLevels">Submit</button>
+          <div
+            class="box-border flex min-h-20 items-center justify-center px-[15px] py-0 text-sm text-[#666] decoration-0"
+          >
+            <button
+              class="m-0 box-border inline-block cursor-pointer overflow-visible border border-transparent bg-[#1e87f0] px-[30px] py-0 text-center text-sm/[38px] text-white uppercase decoration-0"
+              @click="fetchLevels"
+            >
+              Submit
+            </button>
           </div>
-          <div class="uk-navbar-item">
-            <label>
+          <div
+            class="box-border flex min-h-20 items-center justify-center px-[15px] py-0 text-sm text-[#666] decoration-0"
+          >
+            <label class="">
               <input
-                class="uk-checkbox uk-mr-mini"
+                class="m-0 -mt-1 mr-[10px] box-border inline-block h-4 w-4 cursor-pointer overflow-hidden rounded-none border border-[#ccc] align-middle"
                 type="checkbox"
                 v-model="members"
                 @click="members = !members"
@@ -363,49 +375,44 @@ const parseLevels = (data: SkillResult[]) => {
               Members
             </label>
           </div>
-          <div class="uk-navbar-item">QP: {{ questPoints }}</div>
+          <div
+            class="box-border flex min-h-20 items-center justify-center px-[15px] py-0 text-sm text-[#666] decoration-0"
+          >
+            QP: {{ questPoints }}
+          </div>
         </div>
       </nav>
     </div>
-    <div v-show="error" id="error" data-uk-alert>
-      <div className="uk-alert uk-alert-warning">
-        <button className="uk-alert-close uk-icon uk-close link-button" @click="error = false">
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 14 14"
-            xmlns="http://www.w3.org/2000/svg"
-            data-svg="close-icon"
-          >
-            <line fill="none" stroke="#000" strokeWidth="1.1" x1="1" y1="1" x2="13" y2="13"></line>
-            <line fill="none" stroke="#000" strokeWidth="1.1" x1="13" y1="1" x2="1" y2="13"></line>
-          </svg>
-        </button>
-        <p>
+    <div v-show="error" id="error" class="relative mb-0 bg-[#f8f8f8] p-0 text-[#666]">
+      <div className="relative p-[15px] pb-[1px] bg-[#fff6ee] text-[#faa05a]">
+        <p class="m-0 mb-5">
           No player could be found with the username <span className="bold">{{ username }}</span
           >.
         </p>
       </div>
     </div>
-    <table class="uk-table uk-table-divider">
-      <thead data-uk-scrollspy="cls:uk-animation-slide-top">
+    <table class="mt-20 mb-0 w-full border-collapse">
+      <thead>
         <tr>
-          <th>Quest</th>
-          <th>Prerequisites</th>
-          <th>Level Requirements</th>
-          <th>Quest Points</th>
+          <th class="px-3 py-4 text-left align-bottom text-sm font-normal text-[#999] uppercase">
+            Quest
+          </th>
+          <th class="px-3 py-4 text-left align-bottom text-sm font-normal text-[#999] uppercase">
+            Prerequisites
+          </th>
+          <th class="px-3 py-4 text-left align-bottom text-sm font-normal text-[#999] uppercase">
+            Level Requirements
+          </th>
+          <th class="px-3 py-4 text-left align-bottom text-sm font-normal text-[#999] uppercase">
+            Quest Points
+          </th>
         </tr>
       </thead>
       <tbody>
-        <tr
-          v-for="quest in completable"
-          :key="quest.name"
-          class="completable"
-          data-uk-scrollspy="cls:uk-animation-fast-uk uk-animation-fade"
-        >
-          <td>{{ quest.name }}</td>
-          <td>
-            <ul class="uk-list">
+        <tr v-for="quest in completable" :key="quest.name" class="completable">
+          <td class="px-3 py-4 align-top">{{ quest.name }}</td>
+          <td class="px-3 py-4 align-top">
+            <ul class="m-0 mb-5 pl-[30px]">
               <li v-if="quest.requirements.quest_points">
                 {{ quest.requirements.quest_points }} QP
               </li>
@@ -414,25 +421,27 @@ const parseLevels = (data: SkillResult[]) => {
               </li>
             </ul>
           </td>
-          <td>
-            <ul class="uk-list">
+          <td class="px-3 py-4 align-top">
+            <ul class="m-0 mb-5 pl-[30px]">
               <li v-for="prereq in quest.requirements.skills" :key="prereq">
                 {{ prereq }}
               </li>
             </ul>
           </td>
-          <td>{{ quest.quest_points }}</td>
-          <td><button class="uk-button" @click="addToCompleted(quest)">Done</button></td>
+          <td class="px-3 py-4 align-top">{{ quest.quest_points }}</td>
+          <td class="px-3 py-4 align-top">
+            <button
+              class="m-0 box-border inline-block cursor-pointer overflow-visible border-none px-[30px] py-0 text-center align-middle text-sm/[38px] text-white uppercase"
+              @click="addToCompleted(quest)"
+            >
+              Done
+            </button>
+          </td>
         </tr>
-        <tr
-          v-for="quest in incompletable"
-          :key="quest.name"
-          class="incompletable"
-          data-uk-scrollspy="cls:uk-animation-fast-uk uk-animation-fade"
-        >
-          <td>{{ quest.name }}</td>
-          <td>
-            <ul class="uk-list">
+        <tr v-for="quest in incompletable" :key="quest.name" class="incompletable">
+          <td class="px-3 py-4 align-top">{{ quest.name }}</td>
+          <td class="px-3 py-4 align-top">
+            <ul class="m-0 mb-5 pl-[30px]">
               <li v-if="quest.requirements.quest_points">
                 {{ quest.requirements.quest_points }} QP
               </li>
@@ -441,25 +450,27 @@ const parseLevels = (data: SkillResult[]) => {
               </li>
             </ul>
           </td>
-          <td>
-            <ul class="uk-list">
+          <td class="px-3 py-4 align-top">
+            <ul class="m-0 mb-5 pl-[30px]">
               <li v-for="prereq in quest.requirements.skills" :key="prereq">
                 {{ prereq }}
               </li>
             </ul>
           </td>
-          <td>{{ quest.quest_points }}</td>
-          <td><button class="uk-button" @click="addToCompleted(quest)">Done</button></td>
+          <td class="px-3 py-4 align-top">{{ quest.quest_points }}</td>
+          <td class="px-3 py-4 align-top">
+            <button
+              class="m-0 box-border inline-block cursor-pointer overflow-visible border-none px-[30px] py-0 text-center align-middle text-sm/[38px] text-white uppercase"
+              @click="addToCompleted(quest)"
+            >
+              Done
+            </button>
+          </td>
         </tr>
-        <tr
-          v-for="quest in completed"
-          :key="quest.name"
-          class="completed"
-          data-uk-scrollspy="cls:uk-animation-fast-uk uk-animation-fade"
-        >
-          <td>{{ quest.name }}</td>
-          <td>
-            <ul class="uk-list">
+        <tr v-for="quest in completed" :key="quest.name" class="completed">
+          <td class="px-3 py-4 align-top">{{ quest.name }}</td>
+          <td class="px-3 py-4 align-top">
+            <ul class="m-0 mb-5 pl-[30px]">
               <li v-if="quest.requirements.quest_points">
                 {{ quest.requirements.quest_points }} QP
               </li>
@@ -468,15 +479,22 @@ const parseLevels = (data: SkillResult[]) => {
               </li>
             </ul>
           </td>
-          <td>
-            <ul class="uk-list">
+          <td class="px-3 py-4 align-top">
+            <ul class="m-0 mb-5 pl-[30px]">
               <li v-for="prereq in quest.requirements.skills" :key="prereq">
                 {{ prereq }}
               </li>
             </ul>
           </td>
-          <td>{{ quest.quest_points }}</td>
-          <td><button class="uk-button" @click="removeFromCompleted(quest)">Remove</button></td>
+          <td class="px-3 py-4 align-top">{{ quest.quest_points }}</td>
+          <td class="px-3 py-4 align-top">
+            <button
+              class="m-0 box-border inline-block cursor-pointer overflow-visible border-none px-[30px] py-0 text-center align-middle text-sm/[38px] text-white uppercase"
+              @click="removeFromCompleted(quest)"
+            >
+              Remove
+            </button>
+          </td>
         </tr>
       </tbody>
     </table>

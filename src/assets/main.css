@@ -1,3 +1,5 @@
+@import '@/assets/base.css';
+
 table {
   border-color: #2b2b2b;
 }
@@ -8,27 +10,6 @@ button {
 
 .bold {
   font-weight: 700;
-}
-
-.uk-mr-mini {
-  margin-right: 10px;
-}
-
-.uk-button {
-  color: white;
-}
-
-.uk-table {
-  margin-bottom: 0;
-}
-
-.spinner-content > div {
-  left: 50px;
-  margin-bottom: 0.25em;
-}
-
-.spinner-content > div > div {
-  background-color: white;
 }
 
 .completable {
@@ -53,32 +34,4 @@ button {
 
 .completed button {
   background-color: #f44336;
-}
-
-.link-button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  text-decoration: underline;
-  display: inline;
-  margin: 0;
-  padding: 0;
-}
-
-.link-button:hover,
-.link-button:focus {
-  text-decoration: none;
-}
-
-.prevent-scroll {
-  overflow-y: hidden;
-}
-
-#nav-sticky {
-  height: 80px;
-}
-
-#error {
-  margin: 0;
-  padding: 0;
 }
