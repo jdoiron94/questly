@@ -32,12 +32,13 @@ button {
 }
 
 .completable {
-  background-color:#fdfdaf;
+  background-color: #fdfdaf;
   color: #2b2b2b;
 }
 
-.completable button, .incompletable button {
-  background-color: #4CAF50;
+.completable button,
+.incompletable button {
+  background-color: #4caf50;
 }
 
 .incompletable {
@@ -64,7 +65,8 @@ button {
   padding: 0;
 }
 
-.link-button:hover, .link-button:focus {
+.link-button:hover,
+.link-button:focus {
   text-decoration: none;
 }
 

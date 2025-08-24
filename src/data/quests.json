@@ -12,9 +12,7 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "quests": [
-          "Icthlarin's Little Helper"
-        ]
+        "quests": ["Icthlarin's Little Helper"]
       }
     },
     {
@@ -22,16 +20,8 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Darkness of Hallowvale"
-        ],
-        "skills": [
-          "38 Slayer",
-          "40 Attack",
-          "40 Herblore",
-          "45 Agility",
-          "48 Crafting"
-        ]
+        "quests": ["Darkness of Hallowvale"],
+        "skills": ["38 Slayer", "40 Attack", "40 Herblore", "45 Agility", "48 Crafting"]
       }
     },
     {
@@ -46,17 +36,8 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Ernest the Chicken",
-          "Priest in Peril",
-          "The Restless Ghost"
-        ],
-        "skills": [
-          "18 Slayer",
-          "19 Crafting",
-          "30 Ranged",
-          "35 Woodcutting"
-        ]
+        "quests": ["Ernest the Chicken", "Priest in Peril", "The Restless Ghost"],
+        "skills": ["18 Slayer", "19 Crafting", "30 Ranged", "35 Woodcutting"]
       }
     },
     {
@@ -64,16 +45,8 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Death to the Dorgeshuun",
-          "The Giant Dwarf",
-          "The Dig Site",
-          "Druidic Ritual"
-        ],
-        "skills": [
-          "15 Attack",
-          "25 Prayer"
-        ]
+        "quests": ["Death to the Dorgeshuun", "The Giant Dwarf", "The Dig Site", "Druidic Ritual"],
+        "skills": ["15 Attack", "25 Prayer"]
       }
     },
     {
@@ -81,15 +54,8 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "quests": [
-          "Dwarf Cannon",
-          "Fishing Contest"
-        ],
-        "skills": [
-          "30 Defence",
-          "40 Mining",
-          "50 Smithing"
-        ]
+        "quests": ["Dwarf Cannon", "Fishing Contest"],
+        "skills": ["30 Defence", "40 Mining", "50 Smithing"]
       }
     },
     {
@@ -97,11 +63,7 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "skills": [
-          "5 Fletching",
-          "30 Cooking",
-          "30 Ranged"
-        ]
+        "skills": ["5 Fletching", "30 Cooking", "30 Ranged"]
       }
     },
     {
@@ -109,9 +71,7 @@
       "quest_points": 3,
       "requirements": {
         "members": true,
-        "quests": [
-          "Plague City"
-        ]
+        "quests": ["Plague City"]
       }
     },
     {
@@ -126,9 +86,7 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "The Dig Site"
-        ]
+        "quests": ["The Dig Site"]
       }
     },
     {
@@ -136,17 +94,8 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "quests": [
-          "Pirate's Treasure",
-          "Rum Deal",
-          "Priest in Peril"
-        ],
-        "skills": [
-          "40 Ranged",
-          "42 Agility",
-          "45 Crafting",
-          "50 Smithing"
-        ]
+        "quests": ["Pirate's Treasure", "Rum Deal", "Priest in Peril"],
+        "skills": ["40 Ranged", "42 Agility", "45 Crafting", "50 Smithing"]
       }
     },
     {
@@ -168,13 +117,7 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "skills": [
-          "10 Hunter",
-          "15 Thieving",
-          "30 Agility",
-          "30 Crafting",
-          "34 Construction"
-        ]
+        "skills": ["10 Hunter", "15 Thieving", "30 Agility", "30 Crafting", "34 Construction"]
       }
     },
     {
@@ -182,10 +125,7 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Icthlarin's Little Helper",
-          "Prince Ali Rescue"
-        ]
+        "quests": ["Icthlarin's Little Helper", "Prince Ali Rescue"]
       }
     },
     {
@@ -198,14 +138,8 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "quests": [
-          "Priest in Peril",
-          "The Restless Ghost"
-        ],
-        "skills": [
-          "20 Crafting",
-          "25 Thieving"
-        ]
+        "quests": ["Priest in Peril", "The Restless Ghost"],
+        "skills": ["20 Crafting", "25 Thieving"]
       }
     },
     {
@@ -213,9 +147,7 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "quests": [
-          "In Aid of the Myreque"
-        ],
+        "quests": ["In Aid of the Myreque"],
         "skills": [
           "5 Construction",
           "20 Mining",
@@ -239,13 +171,8 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "The Lost Tribe"
-        ],
-        "skills": [
-          "23 Agility",
-          "23 Thieving"
-        ]
+        "quests": ["The Lost Tribe"],
+        "skills": ["23 Agility", "23 Thieving"]
       }
     },
     {
@@ -266,12 +193,7 @@
           "Troll Stronghold",
           "Waterfall Quest"
         ],
-        "skills": [
-          "10 Slayer",
-          "50 Firemaking",
-          "50 Magic",
-          "53 Thieving"
-        ]
+        "skills": ["10 Slayer", "50 Firemaking", "50 Magic", "53 Thieving"]
       }
     },
     {
@@ -279,26 +201,15 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Doric's Quest",
-          "Enter the Abyss",
-          "Troll Stronghold",
-          "Wanted!"
-        ],
-        "skills": [
-          "50 Fletching",
-          "50 Runecraft",
-          "65 Smithing"
-        ]
+        "quests": ["Doric's Quest", "Enter the Abyss", "Troll Stronghold", "Wanted!"],
+        "skills": ["50 Fletching", "50 Runecraft", "65 Smithing"]
       }
     },
     {
       "name": "Doric's Quest",
       "quest_points": 1,
       "requirements": {
-        "skills": [
-          "15 Mining"
-        ]
+        "skills": ["15 Mining"]
       }
     },
     {
@@ -341,10 +252,7 @@
       "requirements": {
         "members": true,
         "combat_level": 85,
-        "quests": [
-          "Eadgar's Ruse",
-          "Lunar Diplomacy"
-        ]
+        "quests": ["Eadgar's Ruse", "Lunar Diplomacy"]
       }
     },
     {
@@ -366,13 +274,8 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Druidic Ritual",
-          "Troll Stronghold"
-        ],
-        "skills": [
-          "31 Herblore"
-        ]
+        "quests": ["Druidic Ritual", "Troll Stronghold"],
+        "skills": ["31 Herblore"]
       }
     },
     {
@@ -380,9 +283,7 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "skills": [
-          "27 Hunter"
-        ]
+        "skills": ["27 Hunter"]
       }
     },
     {
@@ -390,11 +291,7 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "skills": [
-          "20 Crafting",
-          "20 Mining",
-          "20 Smithing"
-        ]
+        "skills": ["20 Crafting", "20 Mining", "20 Smithing"]
       }
     },
     {
@@ -402,13 +299,8 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Elemental Workshop I"
-        ],
-        "skills": [
-          "20 Magic",
-          "30 Smithing"
-        ]
+        "quests": ["Elemental Workshop I"],
+        "skills": ["20 Magic", "30 Smithing"]
       }
     },
     {
@@ -416,12 +308,7 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "skills": [
-          "39 Magic",
-          "43 Prayer",
-          "45 Firemaking",
-          "50 Crafting"
-        ]
+        "skills": ["39 Magic", "43 Prayer", "45 Firemaking", "50 Crafting"]
       }
     },
     {
@@ -430,11 +317,7 @@
       "requirements": {
         "members": true,
         "quest_points": 20,
-        "skills": [
-          "20 Firemaking",
-          "30 Farming",
-          "36 Crafting"
-        ]
+        "skills": ["20 Firemaking", "30 Farming", "36 Crafting"]
       }
     },
     {
@@ -442,9 +325,7 @@
       "quest_points": 0,
       "requirements": {
         "members": true,
-        "quests": [
-          "Rune Mysteries"
-        ]
+        "quests": ["Rune Mysteries"]
       }
     },
     {
@@ -457,11 +338,7 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "quests": [
-          "Lost City",
-          "Nature Spirit",
-          "The Restless Ghost"
-        ]
+        "quests": ["Lost City", "Nature Spirit", "The Restless Ghost"]
       }
     },
     {
@@ -469,14 +346,8 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "quests": [
-          "Fairytale I - Growing Pains"
-        ],
-        "skills": [
-          "40 Thieving",
-          "49 Farming",
-          "57 Herblore"
-        ]
+        "quests": ["Fairytale I - Growing Pains"],
+        "skills": ["40 Thieving", "49 Farming", "57 Herblore"]
       }
     },
     {
@@ -484,12 +355,7 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "skills": [
-          "40 Crafting",
-          "40 Mining",
-          "40 Smithing",
-          "59 Magic"
-        ]
+        "skills": ["40 Crafting", "40 Mining", "40 Smithing", "59 Magic"]
       }
     },
     {
@@ -504,9 +370,7 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "skills": [
-          "10 Fishing"
-        ]
+        "skills": ["10 Fishing"]
       }
     },
     {
@@ -514,14 +378,8 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "quests": [
-          "Fishing Contest",
-          "The Giant Dwarf"
-        ],
-        "skills": [
-          "17 Farming",
-          "22 Cooking"
-        ]
+        "quests": ["Fishing Contest", "The Giant Dwarf"],
+        "skills": ["17 Farming", "22 Cooking"]
       }
     },
     {
@@ -529,12 +387,8 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "quests": [
-          "Creature of Fenkenstrain"
-        ],
-        "skills": [
-          "25 Farming"
-        ]
+        "quests": ["Creature of Fenkenstrain"],
+        "skills": ["25 Farming"]
       }
     },
     {
@@ -549,14 +403,8 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "quests": [
-          "Priest in Peril",
-          "The Restless Ghost"
-        ],
-        "skills": [
-          "20 Cooking",
-          "25 Agility"
-        ]
+        "quests": ["Priest in Peril", "The Restless Ghost"],
+        "skills": ["20 Cooking", "25 Agility"]
       }
     },
     {
@@ -569,16 +417,8 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Witch's House"
-        ],
-        "skills": [
-          "45 Farming",
-          "52 Herblore",
-          "58 Thieving",
-          "59 Agility",
-          "71 Woodcutting"
-        ]
+        "quests": ["Witch's House"],
+        "skills": ["45 Farming", "52 Herblore", "58 Thieving", "59 Agility", "71 Woodcutting"]
       }
     },
     {
@@ -586,13 +426,8 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "quests": [
-          "Priest in Peril"
-        ],
-        "skills": [
-          "15 Agility",
-          "35 Crafting"
-        ]
+        "quests": ["Priest in Peril"],
+        "skills": ["15 Agility", "35 Crafting"]
       }
     },
     {
@@ -615,12 +450,7 @@
           "Merlin's Crystal",
           "Shield of Arrav"
         ],
-        "skills": [
-          "25 Herblore",
-          "50 Mining",
-          "53 Cooking",
-          "53 Fishing"
-        ]
+        "skills": ["25 Herblore", "50 Mining", "53 Cooking", "53 Fishing"]
       }
     },
     {
@@ -628,12 +458,8 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "quests": [
-          "Merlin's Crystal"
-        ],
-        "skills": [
-          "20 Attack"
-        ]
+        "quests": ["Merlin's Crystal"],
+        "skills": ["20 Attack"]
       }
     },
     {
@@ -641,12 +467,8 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "quests": [
-          "Alfred Grimhand's Barcrawl"
-        ],
-        "skills": [
-          "35 Agility"
-        ]
+        "quests": ["Alfred Grimhand's Barcrawl"],
+        "skills": ["35 Agility"]
       }
     },
     {
@@ -654,9 +476,7 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "quests": [
-          "Gertrude's Cat"
-        ]
+        "quests": ["Gertrude's Cat"]
       }
     },
     {
@@ -669,14 +489,8 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "quests": [
-          "In Search of the Myreque"
-        ],
-        "skills": [
-          "7 Magic",
-          "15 Mining",
-          "25 Crafting"
-        ]
+        "quests": ["In Search of the Myreque"],
+        "skills": ["7 Magic", "15 Mining", "25 Crafting"]
       }
     },
     {
@@ -691,12 +505,8 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "quests": [
-          "Nature Spirit"
-        ],
-        "skills": [
-          "25 Agility"
-        ]
+        "quests": ["Nature Spirit"],
+        "skills": ["25 Agility"]
       }
     },
     {
@@ -704,12 +514,8 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Druidic Ritual"
-        ],
-        "skills": [
-          "3 Herblore"
-        ]
+        "quests": ["Druidic Ritual"],
+        "skills": ["3 Herblore"]
       }
     },
     {
@@ -717,16 +523,8 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Black Knights' Fortress",
-          "Holy Grail",
-          "Murder Mystery",
-          "One Small Favour"
-        ],
-        "skills": [
-          "45 Magic",
-          "65 Defence"
-        ]
+        "quests": ["Black Knights' Fortress", "Holy Grail", "Murder Mystery", "One Small Favour"],
+        "skills": ["45 Magic", "65 Defence"]
       }
     },
     {
@@ -761,10 +559,7 @@
       "quest_points": 3,
       "requirements": {
         "members": true,
-        "skills": [
-          "31 Crafting",
-          "36 Woodcutting"
-        ]
+        "skills": ["31 Crafting", "36 Woodcutting"]
       }
     },
     {
@@ -772,12 +567,7 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "quests": [
-          "Lost City",
-          "Rune Mysteries",
-          "Shilo Village",
-          "The Fremennik Trials"
-        ],
+        "quests": ["Lost City", "Rune Mysteries", "Shilo Village", "The Fremennik Trials"],
         "skills": [
           "5 Herblore",
           "40 Defence",
@@ -794,18 +584,8 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "quests": [
-          "Cold War",
-          "My Arm's Big Adventure",
-          "Romeo & Juliet",
-          "Swan Song"
-        ],
-        "skills": [
-          "35 Construction",
-          "66 Firemaking",
-          "68 Agility",
-          "72 Mining"
-        ]
+        "quests": ["Cold War", "My Arm's Big Adventure", "Romeo & Juliet", "Swan Song"],
+        "skills": ["35 Construction", "66 Firemaking", "68 Agility", "72 Mining"]
       }
     },
     {
@@ -813,10 +593,7 @@
       "quest_points": 3,
       "requirements": {
         "members": true,
-        "quests": [
-          "Priest in Peril",
-          "The Restless Ghost"
-        ]
+        "quests": ["Priest in Peril", "The Restless Ghost"]
       }
     },
     {
@@ -843,10 +620,7 @@
       "quest_points": 3,
       "requirements": {
         "members": true,
-        "quests": [
-          "The Grand Tree",
-          "Tree Gnome Village"
-        ]
+        "quests": ["The Grand Tree", "Tree Gnome Village"]
       }
     },
     {
@@ -861,13 +635,7 @@
           "Troll Stronghold",
           "Watchtower"
         ],
-        "skills": [
-          "55 Agility",
-          "55 Thieving",
-          "60 Hunter",
-          "69 Slayer",
-          "70 Crafting"
-        ]
+        "skills": ["55 Agility", "55 Thieving", "60 Hunter", "69 Slayer", "70 Crafting"]
       }
     },
     {
@@ -875,9 +643,7 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "skills": [
-          "20 Agility"
-        ]
+        "skills": ["20 Agility"]
       }
     },
     {
@@ -885,15 +651,8 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "quests": [
-          "Big Chompy Bird Hunting",
-          "Roving Elves",
-          "Sheep Herder"
-        ],
-        "skills": [
-          "50 Thieving",
-          "60 Ranged"
-        ]
+        "quests": ["Big Chompy Bird Hunting", "Roving Elves", "Sheep Herder"],
+        "skills": ["50 Thieving", "60 Ranged"]
       }
     },
     {
@@ -901,9 +660,7 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "quests": [
-          "Mourning's End Part I"
-        ]
+        "quests": ["Mourning's End Part I"]
       }
     },
     {
@@ -918,15 +675,8 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Eadgar's Ruse",
-          "Jungle Potion",
-          "The Feud"
-        ],
-        "skills": [
-          "10 Woodcutting",
-          "29 Farming"
-        ]
+        "quests": ["Eadgar's Ruse", "Jungle Potion", "The Feud"],
+        "skills": ["10 Woodcutting", "29 Farming"]
       }
     },
     {
@@ -934,10 +684,7 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "quests": [
-          "Priest in Peril",
-          "The Restless Ghost"
-        ]
+        "quests": ["Priest in Peril", "The Restless Ghost"]
       }
     },
     {
@@ -945,9 +692,7 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "skills": [
-          "10 Crafting"
-        ]
+        "skills": ["10 Crafting"]
       }
     },
     {
@@ -955,13 +700,8 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "The Fremennik Trials"
-        ],
-        "skills": [
-          "40 Firemaking",
-          "50 Woodcutting"
-        ]
+        "quests": ["The Fremennik Trials"],
+        "skills": ["40 Firemaking", "50 Woodcutting"]
       }
     },
     {
@@ -969,16 +709,8 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "quests": [
-          "Rune Mysteries",
-          "Shilo Village"
-        ],
-        "skills": [
-          "18 Herblore",
-          "25 Crafting",
-          "30 Smithing",
-          "36 Agility"
-        ]
+        "quests": ["Rune Mysteries", "Shilo Village"],
+        "skills": ["18 Herblore", "25 Crafting", "30 Smithing", "36 Agility"]
       }
     },
     {
@@ -1015,9 +747,7 @@
           "Rag and Bone Man",
           "Skippy and the Mogres"
         ],
-        "skills": [
-          "40 Slayer"
-        ]
+        "skills": ["40 Slayer"]
       }
     },
     {
@@ -1025,9 +755,7 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Rag and Bone Man"
-        ]
+        "quests": ["Rag and Bone Man"]
       }
     },
     {
@@ -1035,9 +763,7 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "quests": [
-          "Icthlarin's Little Helper"
-        ]
+        "quests": ["Icthlarin's Little Helper"]
       }
     },
     {
@@ -1067,12 +793,8 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Cook's Assistant"
-        ],
-        "skills": [
-          "10 Cooking"
-        ]
+        "quests": ["Cook's Assistant"],
+        "skills": ["10 Cooking"]
       }
     },
     {
@@ -1080,14 +802,8 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Cook's Assistant",
-          "Gertrude's Cat",
-          "Shadow of the Storm"
-        ],
-        "skills": [
-          "25 Cooking"
-        ]
+        "quests": ["Cook's Assistant", "Gertrude's Cat", "Shadow of the Storm"],
+        "skills": ["25 Cooking"]
       }
     },
     {
@@ -1095,10 +811,7 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Cook's Assistant",
-          "Goblin Diplomacy"
-        ]
+        "quests": ["Cook's Assistant", "Goblin Diplomacy"]
       }
     },
     {
@@ -1106,14 +819,8 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Cook's Assistant",
-          "Monkey Madness I"
-        ],
-        "skills": [
-          "48 Agility",
-          "70 Cooking"
-        ]
+        "quests": ["Cook's Assistant", "Monkey Madness I"],
+        "skills": ["48 Agility", "70 Cooking"]
       }
     },
     {
@@ -1130,9 +837,7 @@
           "Nature Spirit",
           "Witch's House"
         ],
-        "skills": [
-          "40 Cooking"
-        ]
+        "skills": ["40 Cooking"]
       }
     },
     {
@@ -1140,13 +845,8 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Cook's Assistant",
-          "Fishing Contest"
-        ],
-        "skills": [
-          "40 Cooking"
-        ]
+        "quests": ["Cook's Assistant", "Fishing Contest"],
+        "skills": ["40 Cooking"]
       }
     },
     {
@@ -1154,12 +854,8 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Cook's Assistant"
-        ],
-        "skills": [
-          "31 Cooking"
-        ]
+        "quests": ["Cook's Assistant"],
+        "skills": ["31 Cooking"]
       }
     },
     {
@@ -1176,9 +872,7 @@
           "Underground Pass",
           "Waterfall Quest"
         ],
-        "skills": [
-          "31 Cooking"
-        ]
+        "skills": ["31 Cooking"]
       }
     },
     {
@@ -1186,14 +880,8 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Cook's Assistant",
-          "Big Chompy Bird Hunting"
-        ],
-        "skills": [
-          "20 Firemaking",
-          "41 Cooking"
-        ]
+        "quests": ["Cook's Assistant", "Big Chompy Bird Hunting"],
+        "skills": ["20 Firemaking", "41 Cooking"]
       }
     },
     {
@@ -1201,10 +889,7 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Black Knights' Fortress",
-          "Druidic Ritual"
-        ]
+        "quests": ["Black Knights' Fortress", "Druidic Ritual"]
       }
     },
     {
@@ -1212,13 +897,8 @@
       "quest_points": 3,
       "requirements": {
         "members": true,
-        "quests": [
-          "Underground Pass"
-        ],
-        "skills": [
-          "10 Crafting",
-          "56 Agility"
-        ]
+        "quests": ["Underground Pass"],
+        "skills": ["10 Crafting", "56 Agility"]
       }
     },
     {
@@ -1231,13 +911,8 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Regicide",
-          "Waterfall Quest"
-        ],
-        "skills": [
-          "56 Agility"
-        ]
+        "quests": ["Regicide", "Waterfall Quest"],
+        "skills": ["56 Agility"]
       }
     },
     {
@@ -1245,13 +920,8 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Throne of Miscellania"
-        ],
-        "skills": [
-          "40 Agility",
-          "40 Slayer"
-        ]
+        "quests": ["Throne of Miscellania"],
+        "skills": ["40 Agility", "40 Slayer"]
       }
     },
     {
@@ -1259,17 +929,8 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "quests": [
-          "Priest in Peril",
-          "Zogre Flesh Eaters"
-        ],
-        "skills": [
-          "40 Farming",
-          "42 Crafting",
-          "42 Slayer",
-          "47 Prayer",
-          "50 Fishing"
-        ]
+        "quests": ["Priest in Peril", "Zogre Flesh Eaters"],
+        "skills": ["40 Farming", "42 Crafting", "42 Slayer", "47 Prayer", "50 Fishing"]
       }
     },
     {
@@ -1282,12 +943,8 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Alfred Grimhand's Barcrawl"
-        ],
-        "skills": [
-          "31 Prayer"
-        ]
+        "quests": ["Alfred Grimhand's Barcrawl"],
+        "skills": ["31 Prayer"]
       }
     },
     {
@@ -1295,9 +952,7 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "skills": [
-          "30 Firemaking"
-        ]
+        "skills": ["30 Firemaking"]
       }
     },
     {
@@ -1305,14 +960,8 @@
       "quest_points": 3,
       "requirements": {
         "members": true,
-        "quests": [
-          "Priest in Peril"
-        ],
-        "skills": [
-          "5 Firemaking",
-          "15 Herblore",
-          "20 Crafting"
-        ]
+        "quests": ["Priest in Peril"],
+        "skills": ["5 Firemaking", "15 Herblore", "20 Crafting"]
       }
     },
     {
@@ -1320,13 +969,8 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Demon Slayer",
-          "The Golem"
-        ],
-        "skills": [
-          "30 Crafting"
-        ]
+        "quests": ["Demon Slayer", "The Golem"],
+        "skills": ["30 Crafting"]
       }
     },
     {
@@ -1351,13 +995,8 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "quests": [
-          "Jungle Potion"
-        ],
-        "skills": [
-          "20 Crafting",
-          "32 Agility"
-        ]
+        "quests": ["Jungle Potion"],
+        "skills": ["20 Crafting", "32 Agility"]
       }
     },
     {
@@ -1365,9 +1004,7 @@
       "quest_points": 0,
       "requirements": {
         "members": true,
-        "skills": [
-          "20 Cooking"
-        ]
+        "skills": ["20 Cooking"]
       }
     },
     {
@@ -1375,10 +1012,7 @@
       "quest_points": 4,
       "requirements": {
         "members": true,
-        "quests": [
-          "Making History",
-          "Mourning's End Part II"
-        ],
+        "quests": ["Making History", "Mourning's End Part II"],
         "skills": [
           "70 Agility",
           "70 Construction",
@@ -1396,12 +1030,7 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "skills": [
-          "33 Magic",
-          "37 Mining",
-          "37 Ranged",
-          "37 Thieving"
-        ]
+        "skills": ["33 Magic", "37 Mining", "37 Ranged", "37 Thieving"]
       }
     },
     {
@@ -1410,10 +1039,7 @@
       "requirements": {
         "members": true,
         "quest_points": 100,
-        "quests": [
-          "Garden of Tranquillity",
-          "One Small Favour"
-        ],
+        "quests": ["Garden of Tranquillity", "One Small Favour"],
         "skills": [
           "40 Crafting",
           "42 Firemaking",
@@ -1429,14 +1055,8 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "quests": [
-          "Jungle Potion"
-        ],
-        "skills": [
-          "5 Fishing",
-          "15 Agility",
-          "30 Cooking"
-        ]
+        "quests": ["Jungle Potion"],
+        "skills": ["5 Fishing", "15 Agility", "30 Cooking"]
       }
     },
     {
@@ -1444,13 +1064,8 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Client of Kourend"
-        ],
-        "skills": [
-          "10 Mining",
-          "16 Strength"
-        ]
+        "quests": ["Client of Kourend"],
+        "skills": ["10 Mining", "16 Strength"]
       }
     },
     {
@@ -1459,11 +1074,7 @@
       "requirements": {
         "members": true,
         "quest_points": 43,
-        "skills": [
-          "20 Crafting",
-          "20 Mining",
-          "49 Firemaking"
-        ]
+        "skills": ["20 Crafting", "20 Mining", "49 Firemaking"]
       }
     },
     {
@@ -1471,10 +1082,7 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "skills": [
-          "40 Ranged",
-          "42 Thieving"
-        ]
+        "skills": ["40 Ranged", "42 Thieving"]
       }
     },
     {
@@ -1482,12 +1090,8 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Client of Kourend"
-        ],
-        "skills": [
-          "12 Hunter"
-        ]
+        "quests": ["Client of Kourend"],
+        "skills": ["12 Hunter"]
       }
     },
     {
@@ -1500,12 +1104,8 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Client of Kourend"
-        ],
-        "skills": [
-          "18 Agility"
-        ]
+        "quests": ["Client of Kourend"],
+        "skills": ["18 Agility"]
       }
     },
     {
@@ -1513,14 +1113,8 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "quests": [
-          "Druidic Ritual"
-        ],
-        "skills": [
-          "10 Agility",
-          "10 Herblore",
-          "25 Thieving"
-        ]
+        "quests": ["Druidic Ritual"],
+        "skills": ["10 Agility", "10 Herblore", "25 Thieving"]
       }
     },
     {
@@ -1528,13 +1122,8 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "quests": [
-          "The Grand Tree"
-        ],
-        "skills": [
-          "5 Construction",
-          "46 Magic"
-        ]
+        "quests": ["The Grand Tree"],
+        "skills": ["5 Construction", "46 Magic"]
       }
     },
     {
@@ -1542,9 +1131,7 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Client of Kourend"
-        ]
+        "quests": ["Client of Kourend"]
       }
     },
     {
@@ -1552,9 +1139,7 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "skills": [
-          "30 Thieving"
-        ]
+        "skills": ["30 Thieving"]
       }
     },
     {
@@ -1562,19 +1147,8 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "quests": [
-          "The Fremennik Isles",
-          "Lunar Diplomacy",
-          "Mountain Daughter",
-          "Heroes' Quest"
-        ],
-        "skills": [
-          "65 Crafting",
-          "60 Slayer",
-          "60 Smithing",
-          "60 Fishing",
-          "55 Runecraft"
-        ]
+        "quests": ["The Fremennik Isles", "Lunar Diplomacy", "Mountain Daughter", "Heroes' Quest"],
+        "skills": ["65 Crafting", "60 Slayer", "60 Smithing", "60 Fishing", "55 Runecraft"]
       }
     },
     {
@@ -1582,13 +1156,8 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "The Fremennik Trials"
-        ],
-        "skills": [
-          "20 Construction",
-          "40 Agility"
-        ]
+        "quests": ["The Fremennik Trials"],
+        "skills": ["20 Construction", "40 Agility"]
       }
     },
     {
@@ -1603,12 +1172,7 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "skills": [
-          "12 Crafting",
-          "14 Thieving",
-          "16 Firemaking",
-          "33 Magic"
-        ]
+        "skills": ["12 Crafting", "14 Thieving", "16 Firemaking", "33 Magic"]
       }
     },
     {
@@ -1616,10 +1180,7 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "skills": [
-          "20 Crafting",
-          "25 Thieving"
-        ]
+        "skills": ["20 Crafting", "25 Thieving"]
       }
     },
     {
@@ -1627,9 +1188,7 @@
       "quest_points": 5,
       "requirements": {
         "members": true,
-        "skills": [
-          "25 Agility"
-        ]
+        "skills": ["25 Agility"]
       }
     },
     {
@@ -1637,16 +1196,8 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "quests": [
-          "Cabin Fever",
-          "Creature of Fenkenstrain",
-          "Recipe for Disaster: Pirate Pete"
-        ],
-        "skills": [
-          "16 Crafting",
-          "30 Construction",
-          "50 Prayer"
-        ]
+        "quests": ["Cabin Fever", "Creature of Fenkenstrain", "Recipe for Disaster: Pirate Pete"],
+        "skills": ["16 Crafting", "30 Construction", "50 Prayer"]
       }
     },
     {
@@ -1654,19 +1205,14 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "skills": [
-          "17 Thieving",
-          "49 Crafting"
-        ]
+        "skills": ["17 Thieving", "49 Crafting"]
       }
     },
     {
       "name": "The Knight's Sword",
       "quest_points": 1,
       "requirements": {
-        "skills": [
-          "10 Mining"
-        ]
+        "skills": ["10 Mining"]
       }
     },
     {
@@ -1674,15 +1220,8 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Goblin Diplomacy",
-          "Rune Mysteries"
-        ],
-        "skills": [
-          "13 Agility",
-          "13 Thieving",
-          "17 Mining"
-        ]
+        "quests": ["Goblin Diplomacy", "Rune Mysteries"],
+        "skills": ["13 Agility", "13 Thieving", "17 Mining"]
       }
     },
     {
@@ -1695,16 +1234,8 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Sea Slug",
-          "Wanted!"
-        ],
-        "skills": [
-          "30 Crafting",
-          "30 Runecraft",
-          "30 Slayer",
-          "30 Thieving"
-        ]
+        "quests": ["Sea Slug", "Wanted!"],
+        "skills": ["30 Crafting", "30 Runecraft", "30 Slayer", "30 Thieving"]
       }
     },
     {
@@ -1712,10 +1243,7 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "skills": [
-          "10 Fletching",
-          "20 Smithing"
-        ]
+        "skills": ["10 Fletching", "20 Smithing"]
       }
     },
     {
@@ -1723,12 +1251,8 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Client of Kourend"
-        ],
-        "skills": [
-          "20 Thieving"
-        ]
+        "quests": ["Client of Kourend"],
+        "skills": ["20 Thieving"]
       }
     },
     {
@@ -1736,13 +1260,8 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Heroes' Quest",
-          "The Fremennik Trials"
-        ],
-        "skills": [
-          "10 Farming || 30 Mining || 35 Fishing || 45 Woodcutting"
-        ]
+        "quests": ["Heroes' Quest", "The Fremennik Trials"],
+        "skills": ["10 Farming || 30 Mining || 35 Fishing || 45 Woodcutting"]
       }
     },
     {
@@ -1750,9 +1269,7 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "skills": [
-          "10 Construction"
-        ]
+        "skills": ["10 Construction"]
       }
     },
     {
@@ -1767,9 +1284,7 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "skills": [
-          "21 Thieving"
-        ]
+        "skills": ["21 Thieving"]
       }
     },
     {
@@ -1777,12 +1292,8 @@
       "quest_points": 2,
       "requirements": {
         "members": true,
-        "quests": [
-          "Troll Stronghold"
-        ],
-        "skills": [
-          "28 Agility"
-        ]
+        "quests": ["Troll Stronghold"],
+        "skills": ["28 Agility"]
       }
     },
     {
@@ -1790,12 +1301,8 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Death Plateau"
-        ],
-        "skills": [
-          "15 Agility"
-        ]
+        "quests": ["Death Plateau"],
+        "skills": ["15 Agility"]
       }
     },
     {
@@ -1803,12 +1310,8 @@
       "quest_points": 5,
       "requirements": {
         "members": true,
-        "quests": [
-          "Biohazard"
-        ],
-        "skills": [
-          "25 Ranged"
-        ]
+        "quests": ["Biohazard"],
+        "skills": ["25 Ranged"]
       }
     },
     {
@@ -1822,11 +1325,7 @@
       "requirements": {
         "members": true,
         "quest_points": 32,
-        "quests": [
-          "Priest in Peril",
-          "Recruitment Drive",
-          "The Lost Tribe"
-        ]
+        "quests": ["Priest in Peril", "Recruitment Drive", "The Lost Tribe"]
       }
     },
     {
@@ -1834,16 +1333,8 @@
       "quest_points": 4,
       "requirements": {
         "members": true,
-        "quests": [
-          "Druidic Ritual"
-        ],
-        "skills": [
-          "14 Herblore",
-          "15 Magic",
-          "15 Thieving",
-          "25 Agility",
-          "40 Mining"
-        ]
+        "quests": ["Druidic Ritual"],
+        "skills": ["14 Herblore", "15 Magic", "15 Thieving", "25 Agility", "40 Mining"]
       }
     },
     {
@@ -1858,13 +1349,8 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Rune Mysteries"
-        ],
-        "skills": [
-          "35 Runecraft",
-          "42 Mining"
-        ]
+        "quests": ["Rune Mysteries"],
+        "skills": ["35 Runecraft", "42 Mining"]
       }
     },
     {
@@ -1889,16 +1375,8 @@
       "quest_points": 1,
       "requirements": {
         "members": true,
-        "quests": [
-          "Big Chompy Bird Hunting",
-          "Jungle Potion"
-        ],
-        "skills": [
-          "4 Smithing",
-          "8 Herblore",
-          "30 Fletching",
-          "30 Ranged"
-        ]
+        "quests": ["Big Chompy Bird Hunting", "Jungle Potion"],
+        "skills": ["4 Smithing", "8 Herblore", "30 Fletching", "30 Ranged"]
       }
     }
   ]
