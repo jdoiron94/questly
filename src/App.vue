@@ -332,19 +332,19 @@ const parseLevels = (data: SkillResult[]) => {
 
 <template>
   <main class="block">
-    <div id="nav-sticky" class="fixed box-border w-full h-20 top-0 m-0 backface-hidden z-980">
-      <nav class="flex relative mb-5 bg-[#f8f8f8]">
-        <div class="flex items-center flex-wrap">
+    <div id="nav-sticky" class="fixed top-0 z-980 m-0 box-border h-20 w-full backface-hidden">
+      <nav class="relative mb-5 flex bg-[#f8f8f8]">
+        <div class="flex flex-wrap items-center">
           <div
-            class="flex justify-center items-center box-border min-h-20 px-[15px] py-0 text-[#666] text-2xl decoration-0"
+            class="box-border flex min-h-20 items-center justify-center px-[15px] py-0 text-2xl text-[#666] decoration-0"
           >
             Questly
           </div>
           <div
-            class="flex justify-center items-center box-border min-h-20 px-[15px] py-0 text-[#666] text-sm decoration-0"
+            class="box-border flex min-h-20 items-center justify-center px-[15px] py-0 text-sm text-[#666] decoration-0"
           >
             <input
-              class="inline-block box-border w-50 max-w-full h-10 m-0 px-[10px] py-0 overflow-visible rounded-none bg-[#fff] text-[#666] border border-[#e5e5e5]"
+              class="m-0 box-border inline-block h-10 w-50 max-w-full overflow-visible rounded-none border border-[#e5e5e5] bg-[#fff] px-[10px] py-0 text-[#666]"
               type="text"
               placeholder="Username"
               v-model="username"
@@ -353,21 +353,21 @@ const parseLevels = (data: SkillResult[]) => {
             />
           </div>
           <div
-            class="flex justify-center items-center box-border min-h-20 px-[15px] py-0 text-[#666] text-sm decoration-0"
+            class="box-border flex min-h-20 items-center justify-center px-[15px] py-0 text-sm text-[#666] decoration-0"
           >
             <button
-              class="inline-block box-border m-0 px-[30px] py-0 overflow-visible text-sm/[38px] text-center uppercase decoration-0 bg-[#1e87f0] text-white border border-transparent cursor-pointer"
+              class="m-0 box-border inline-block cursor-pointer overflow-visible border border-transparent bg-[#1e87f0] px-[30px] py-0 text-center text-sm/[38px] text-white uppercase decoration-0"
               @click="fetchLevels"
             >
               Submit
             </button>
           </div>
           <div
-            class="flex justify-center items-center box-border min-h-20 px-[15px] py-0 text-[#666] text-sm decoration-0"
+            class="box-border flex min-h-20 items-center justify-center px-[15px] py-0 text-sm text-[#666] decoration-0"
           >
             <label class="">
               <input
-                class="inline-block box-border align-middle w-4 h-4 -mt-1 m-0 mr-[10px] overflow-hidden rounded-none border border-[#ccc] cursor-pointer"
+                class="m-0 -mt-1 mr-[10px] box-border inline-block h-4 w-4 cursor-pointer overflow-hidden rounded-none border border-[#ccc] align-middle"
                 type="checkbox"
                 v-model="members"
                 @click="members = !members"
@@ -376,14 +376,14 @@ const parseLevels = (data: SkillResult[]) => {
             </label>
           </div>
           <div
-            class="flex justify-center items-center box-border min-h-20 px-[15px] py-0 text-[#666] text-sm decoration-0"
+            class="box-border flex min-h-20 items-center justify-center px-[15px] py-0 text-sm text-[#666] decoration-0"
           >
             QP: {{ questPoints }}
           </div>
         </div>
       </nav>
     </div>
-    <div v-show="error" id="error" class="relative mb-0 p-0 bg-[#f8f8f8] text-[#666]">
+    <div v-show="error" id="error" class="relative mb-0 bg-[#f8f8f8] p-0 text-[#666]">
       <div className="relative p-[15px] pb-[1px] bg-[#fff6ee] text-[#faa05a]">
         <p class="m-0 mb-5">
           No player could be found with the username <span className="bold">{{ username }}</span
@@ -391,19 +391,19 @@ const parseLevels = (data: SkillResult[]) => {
         </p>
       </div>
     </div>
-    <table class="w-full mt-20 mb-0 border-collapse">
+    <table class="mt-20 mb-0 w-full border-collapse">
       <thead>
         <tr>
-          <th class="align-bottom px-3 py-4 text-left text-sm font-normal text-[#999] uppercase">
+          <th class="px-3 py-4 text-left align-bottom text-sm font-normal text-[#999] uppercase">
             Quest
           </th>
-          <th class="align-bottom px-3 py-4 text-left text-sm font-normal text-[#999] uppercase">
+          <th class="px-3 py-4 text-left align-bottom text-sm font-normal text-[#999] uppercase">
             Prerequisites
           </th>
-          <th class="align-bottom px-3 py-4 text-left text-sm font-normal text-[#999] uppercase">
+          <th class="px-3 py-4 text-left align-bottom text-sm font-normal text-[#999] uppercase">
             Level Requirements
           </th>
-          <th class="align-bottom px-3 py-4 text-left text-sm font-normal text-[#999] uppercase">
+          <th class="px-3 py-4 text-left align-bottom text-sm font-normal text-[#999] uppercase">
             Quest Points
           </th>
         </tr>
@@ -431,7 +431,7 @@ const parseLevels = (data: SkillResult[]) => {
           <td class="px-3 py-4 align-top">{{ quest.quest_points }}</td>
           <td class="px-3 py-4 align-top">
             <button
-              class="m-0 cursor-pointer text-white border-none overflow-visible inline-block box-border py-0 px-[30px] align-middle text-sm/[38px] text-center uppercase"
+              class="m-0 box-border inline-block cursor-pointer overflow-visible border-none px-[30px] py-0 text-center align-middle text-sm/[38px] text-white uppercase"
               @click="addToCompleted(quest)"
             >
               Done
@@ -460,7 +460,7 @@ const parseLevels = (data: SkillResult[]) => {
           <td class="px-3 py-4 align-top">{{ quest.quest_points }}</td>
           <td class="px-3 py-4 align-top">
             <button
-              class="m-0 cursor-pointer text-white border-none overflow-visible inline-block box-border py-0 px-[30px] align-middle text-sm/[38px] text-center uppercase"
+              class="m-0 box-border inline-block cursor-pointer overflow-visible border-none px-[30px] py-0 text-center align-middle text-sm/[38px] text-white uppercase"
               @click="addToCompleted(quest)"
             >
               Done
@@ -489,7 +489,7 @@ const parseLevels = (data: SkillResult[]) => {
           <td class="px-3 py-4 align-top">{{ quest.quest_points }}</td>
           <td class="px-3 py-4 align-top">
             <button
-              class="m-0 cursor-pointer text-white border-none overflow-visible inline-block box-border py-0 px-[30px] align-middle text-sm/[38px] text-center uppercase"
+              class="m-0 box-border inline-block cursor-pointer overflow-visible border-none px-[30px] py-0 text-center align-middle text-sm/[38px] text-white uppercase"
               @click="removeFromCompleted(quest)"
             >
               Remove
