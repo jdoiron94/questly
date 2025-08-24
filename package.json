@@ -13,8 +13,8 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
     "lint": "eslint .",
-    "prettier": "prettier src/ --check",
-    "prettier:fix": "prettier src/ --write"
+    "prettier": "prettier . --check",
+    "prettier:fix": "prettier . --write"
   },
   "dependencies": {
     "vue": "^3.5.18"
