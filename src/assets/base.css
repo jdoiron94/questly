@@ -6,6 +6,14 @@
   }
 
   ul {
-    @apply list-inside list-disc;
+    @apply m-0 mb-5 list-inside list-disc pl-[30px];
+  }
+
+  th {
+    @apply px-3 py-4 text-left align-bottom text-sm font-normal text-[#999] uppercase;
+  }
+
+  td {
+    @apply px-3 py-4 align-top;
   }
 }

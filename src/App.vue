@@ -2,36 +2,11 @@
 import { quests } from '@/data/quests.json'
 import type { SkillResult } from '@/types/http'
 import type { Quest } from '@/types/quests'
+import { compareQuests, SKILLS } from '@/utils/global'
 import { onMounted, onUnmounted, ref, watch } from 'vue'
 
 const CORS_ANYWHERE_URL = 'https://corsproxy.io/?'
 const HISCORE_URL = 'https://secure.runescape.com/m=hiscore_oldschool/index_lite.json?player='
-
-const SKILLS = [
-  'Attack',
-  'Defence',
-  'Strength',
-  'Hitpoints',
-  'Ranged',
-  'Prayer',
-  'Magic',
-  'Cooking',
-  'Woodcutting',
-  'Fletching',
-  'Fishing',
-  'Firemaking',
-  'Crafting',
-  'Smithing',
-  'Mining',
-  'Herblore',
-  'Agility',
-  'Thieving',
-  'Slayer',
-  'Farming',
-  'Runecraft',
-  'Hunter',
-  'Construction',
-]
 
 let encodedUsername = ''
 const username = ref<string>('')
@@ -41,13 +16,15 @@ const completed = ref<Quest[]>([])
 const completable = ref<Quest[]>(quests.slice(0))
 const incompletable = ref<Quest[]>([])
 const questPoints = ref<number>(0)
-// const spinnerActive = ref<boolean>(false)
 const error = ref(false)
 
 // Read data from local storage on mount
 onMounted(() => {
   window.addEventListener('beforeunload', saveToStorage)
-  readFromStorage()
+  const stored = readFromStorage()
+  members.value = stored.members
+  completed.value = stored.completed
+
   updateQuests()
 })
 
@@ -64,7 +41,10 @@ watch(members, () => {
 // Update quests when player is fetched
 watch(levels, () => {
   if (levels.value.length > 1) {
-    readFromStorage()
+    const stored = readFromStorage()
+    members.value = stored.members
+    completed.value = stored.completed
+
     updateQuests()
   }
 })
@@ -75,18 +55,22 @@ watch(username, () => {
 })
 
 // Update quest points when completed quests change
-watch(completed, () => {
-  updateQuestPoints()
-})
+watch(
+  completed,
+  () => {
+    updateQuestPoints()
+  },
+  { deep: true },
+)
 
 // Update quests when quest point value changes
 watch(questPoints, () => {
   updateQuests()
 })
 
-const readFromStorage = () => {
+const readFromStorage = (): { members: boolean; completed: Quest[] } => {
   if (typeof Storage !== 'undefined') {
-    const user = !encodedUsername ? 'default' : encodedUsername
+    const user = encodedUsername ?? 'default'
     const data = JSON.parse(localStorage.getItem(`quest_data_${user}`) ?? '{}')
 
     if (Object.keys(data).length) {
@@ -100,13 +84,11 @@ const readFromStorage = () => {
         }
       }
 
-      members.value = data.members
-      completed.value = finished.sort(compareQuests)
-    } else {
-      members.value = true
-      completed.value = []
+      return { members: data.members, completed: finished.sort(compareQuests) }
     }
   }
+
+  return { members: true, completed: [] }
 }
 
 const saveToStorage = () => {
@@ -115,7 +97,7 @@ const saveToStorage = () => {
       members: members.value,
       completed: completed.value.map((q) => q.name),
     }
-    const user = !encodedUsername ? 'default' : encodedUsername
+    const user = encodedUsername ?? 'default'
     localStorage.setItem(`quest_data_${user}`, JSON.stringify(data))
   }
 }
@@ -237,7 +219,6 @@ const addToCompleted = (quest: Quest) => {
     addAllToCompleted(quest)
     completed.value.push(quest)
     completed.value.sort(compareQuests)
-    updateQuestPoints()
   }
 }
 
@@ -251,10 +232,6 @@ const removeFromCompleted = (quest: Quest) => {
   }
 
   completed.value = completed.value.filter((q) => q !== quest).sort(compareQuests)
-}
-
-const compareQuests = (a: Quest, b: Quest) => {
-  return a.name.localeCompare(b.name)
 }
 
 const updateQuestPoints = () => {
@@ -278,7 +255,6 @@ const fetchLevels = () => {
     return
   }
 
-  // setSpinnerActive(true)
   saveToStorage()
   encodedUsername = encodeURIComponent(username.value.trim())
   const fullUrl = CORS_ANYWHERE_URL + HISCORE_URL + encodedUsername
@@ -293,7 +269,6 @@ const fetchLevels = () => {
       parseLevels(res.skills)
     })
     .catch(() => {
-      // setSpinnerActive(false)
       error.value = true
     })
 }
@@ -312,8 +287,8 @@ const parseLevels = (data: SkillResult[]) => {
 </script>
 
 <template>
-  <main class="block">
-    <div id="nav-sticky" class="fixed top-0 z-980 m-0 box-border h-20 w-full backface-hidden">
+  <main>
+    <div class="fixed top-0 z-980 m-0 box-border h-20 w-full backface-hidden">
       <nav class="relative mb-5 flex bg-[#f8f8f8]">
         <div class="flex flex-wrap items-center">
           <div
@@ -346,7 +321,7 @@ const parseLevels = (data: SkillResult[]) => {
           <div
             class="box-border flex min-h-20 items-center justify-center px-[15px] py-0 text-sm text-[#666] decoration-0"
           >
-            <label class="">
+            <label>
               <input
                 class="m-0 -mt-1 mr-[10px] box-border inline-block h-4 w-4 cursor-pointer overflow-hidden rounded-none border border-[#ccc] align-middle"
                 type="checkbox"
@@ -364,7 +339,7 @@ const parseLevels = (data: SkillResult[]) => {
         </div>
       </nav>
     </div>
-    <div v-show="error" id="error" class="relative mb-0 bg-[#f8f8f8] p-0 text-[#666]">
+    <div v-show="error" class="relative mb-0 bg-[#f8f8f8] p-0 text-[#666]">
       <div className="relative p-[15px] pb-[1px] bg-[#fff6ee] text-[#faa05a]">
         <p class="m-0 mb-5">
           No player could be found with the username <span className="bold">{{ username }}</span
@@ -375,25 +350,17 @@ const parseLevels = (data: SkillResult[]) => {
     <table class="mt-20 mb-0 w-full border-collapse">
       <thead>
         <tr>
-          <th class="px-3 py-4 text-left align-bottom text-sm font-normal text-[#999] uppercase">
-            Quest
-          </th>
-          <th class="px-3 py-4 text-left align-bottom text-sm font-normal text-[#999] uppercase">
-            Prerequisites
-          </th>
-          <th class="px-3 py-4 text-left align-bottom text-sm font-normal text-[#999] uppercase">
-            Level Requirements
-          </th>
-          <th class="px-3 py-4 text-left align-bottom text-sm font-normal text-[#999] uppercase">
-            Quest Points
-          </th>
+          <th>Quest</th>
+          <th>Prerequisites</th>
+          <th>Level Requirements</th>
+          <th>Quest Points</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="quest in completable" :key="quest.name" class="completable">
-          <td class="px-3 py-4 align-top">{{ quest.name }}</td>
-          <td class="px-3 py-4 align-top">
-            <ul class="m-0 mb-5 pl-[30px]">
+          <td>{{ quest.name }}</td>
+          <td>
+            <ul>
               <li v-if="quest.requirements.quest_points">
                 {{ quest.requirements.quest_points }} QP
               </li>
@@ -402,15 +369,15 @@ const parseLevels = (data: SkillResult[]) => {
               </li>
             </ul>
           </td>
-          <td class="px-3 py-4 align-top">
-            <ul class="m-0 mb-5 pl-[30px]">
+          <td>
+            <ul>
               <li v-for="prereq in quest.requirements.skills" :key="prereq">
                 {{ prereq }}
               </li>
             </ul>
           </td>
-          <td class="px-3 py-4 align-top">{{ quest.quest_points }}</td>
-          <td class="px-3 py-4 align-top">
+          <td>{{ quest.quest_points }}</td>
+          <td>
             <button
               class="m-0 box-border inline-block cursor-pointer overflow-visible border-none px-[30px] py-0 text-center align-middle text-sm/[38px] text-white uppercase"
               @click="addToCompleted(quest)"
@@ -420,9 +387,9 @@ const parseLevels = (data: SkillResult[]) => {
           </td>
         </tr>
         <tr v-for="quest in incompletable" :key="quest.name" class="incompletable">
-          <td class="px-3 py-4 align-top">{{ quest.name }}</td>
-          <td class="px-3 py-4 align-top">
-            <ul class="m-0 mb-5 pl-[30px]">
+          <td>{{ quest.name }}</td>
+          <td>
+            <ul>
               <li v-if="quest.requirements.quest_points">
                 {{ quest.requirements.quest_points }} QP
               </li>
@@ -431,15 +398,15 @@ const parseLevels = (data: SkillResult[]) => {
               </li>
             </ul>
           </td>
-          <td class="px-3 py-4 align-top">
-            <ul class="m-0 mb-5 pl-[30px]">
+          <td>
+            <ul>
               <li v-for="prereq in quest.requirements.skills" :key="prereq">
                 {{ prereq }}
               </li>
             </ul>
           </td>
-          <td class="px-3 py-4 align-top">{{ quest.quest_points }}</td>
-          <td class="px-3 py-4 align-top">
+          <td>{{ quest.quest_points }}</td>
+          <td>
             <button
               class="m-0 box-border inline-block cursor-pointer overflow-visible border-none px-[30px] py-0 text-center align-middle text-sm/[38px] text-white uppercase"
               @click="addToCompleted(quest)"
@@ -449,9 +416,9 @@ const parseLevels = (data: SkillResult[]) => {
           </td>
         </tr>
         <tr v-for="quest in completed" :key="quest.name" class="completed">
-          <td class="px-3 py-4 align-top">{{ quest.name }}</td>
-          <td class="px-3 py-4 align-top">
-            <ul class="m-0 mb-5 pl-[30px]">
+          <td>{{ quest.name }}</td>
+          <td>
+            <ul>
               <li v-if="quest.requirements.quest_points">
                 {{ quest.requirements.quest_points }} QP
               </li>
@@ -460,15 +427,15 @@ const parseLevels = (data: SkillResult[]) => {
               </li>
             </ul>
           </td>
-          <td class="px-3 py-4 align-top">
-            <ul class="m-0 mb-5 pl-[30px]">
+          <td>
+            <ul>
               <li v-for="prereq in quest.requirements.skills" :key="prereq">
                 {{ prereq }}
               </li>
             </ul>
           </td>
-          <td class="px-3 py-4 align-top">{{ quest.quest_points }}</td>
-          <td class="px-3 py-4 align-top">
+          <td>{{ quest.quest_points }}</td>
+          <td>
             <button
               class="m-0 box-border inline-block cursor-pointer overflow-visible border-none px-[30px] py-0 text-center align-middle text-sm/[38px] text-white uppercase"
               @click="removeFromCompleted(quest)"
@@ -481,5 +448,3 @@ const parseLevels = (data: SkillResult[]) => {
     </table>
   </main>
 </template>
-
-<style scoped></style>
