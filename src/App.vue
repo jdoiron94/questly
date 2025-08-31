@@ -1,27 +1,8 @@
 <script setup lang="ts">
 import { quests } from '@/data/quests.json'
+import type { SkillResult } from '@/types/http'
+import type { Quest } from '@/types/quests'
 import { onMounted, onUnmounted, ref, watch } from 'vue'
-
-type SkillResult = {
-  id: number
-  name: string
-  rank: number
-  level: number
-  xp: number
-}
-
-type Quest = {
-  name: string
-  quest_points: number
-  requirements: QuestRequirements
-}
-
-type QuestRequirements = {
-  quests?: string[]
-  skills?: string[]
-  quest_points?: number
-  members?: boolean
-}
 
 const CORS_ANYWHERE_URL = 'https://corsproxy.io/?'
 const HISCORE_URL = 'https://secure.runescape.com/m=hiscore_oldschool/index_lite.json?player='
